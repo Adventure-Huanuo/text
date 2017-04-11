@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 
 public class LoginActivity extends Activity {
     private EditText accountEdit;
@@ -44,7 +45,7 @@ public class LoginActivity extends Activity {
                 });
         checkBox1=(CheckBox) findViewById(R.id.checkBox1);
         checkBox2=(CheckBox) findViewById(R.id.checkBox2);
-        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        checkBox1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {

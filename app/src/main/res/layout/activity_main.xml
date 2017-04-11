@@ -3,7 +3,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -16,23 +15,19 @@
             android:background="@color/colorMain"
             android:layout_marginTop="6dp"
             android:layout_marginLeft="6dp">
-            <ImageView
+            <EditText
                 android:id="@+id/image_view_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/search"
-                android:layout_gravity="left"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="8dp" />
-            <EditText
-                android:id="@+id/edit_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:drawableLeft="@mipmap/search"
                 android:layout_gravity="center"
-                android:hint="type something here"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="12dp"
+                android:hint="搜索"
                 android:textSize="12sp"
                 android:background="@null"
-                android:textCursorDrawable="@null"/>
+                android:textCursorDrawable="@null"
+                android:drawablePadding="12dp"/>
         </LinearLayout>
         <ImageView
             android:id="@+id/image_view_6"
@@ -299,12 +294,14 @@
         android:background="@drawable/vv1">
     </FrameLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="115dp">
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="115dp"
         android:fitsSystemWindows="true"
         android:background="@color/colorMain">
-
         <TextView
             android:id="@+id/text01"
             android:layout_width="wrap_content"
@@ -324,7 +321,7 @@
             android:textSize="12sp"
             android:textStyle="normal"
             android:layout_marginTop="12dp"
-            android:layout_marginLeft="344dp"/>
+            android:layout_marginLeft="304dp"/>
         <TextView
             android:id="@+id/text03"
             android:layout_width="wrap_content"
@@ -333,7 +330,7 @@
             android:textColor="@color/colorText"
             android:textSize="12sp"
             android:textStyle="normal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="36dp"
             android:layout_marginLeft="12dp"/>
         <TextView
             android:id="@+id/text04"
@@ -343,15 +340,58 @@
             android:textColor="@color/colorText"
             android:textSize="12sp"
             android:textStyle="normal"
-            android:layout_marginTop="54dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="12dp"/>
+        <TextView
+            android:id="@+id/text05"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="通知公告"
+            android:textColor="@color/colorBackgroud"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:layout_marginTop="102dp"
+            android:layout_marginLeft="12dp"/>
+        <TextView
+            android:id="@+id/text06"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="more"
+            android:textColor="@color/colorBackgroud"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:layout_marginTop="102dp"
+            android:layout_marginLeft="304dp"/>
+        <TextView
+            android:id="@+id/text07"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="关于差旅制度更新的通知(2016/12/19)"
+            android:textColor="@color/colorText"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:layout_marginTop="126dp"
+            android:layout_marginLeft="12dp"/>
+        <TextView
+            android:id="@+id/text08"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="2016华诺outing活动(2016/08/08)"
+            android:textColor="@color/colorText"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:layout_marginTop="150dp"
             android:layout_marginLeft="12dp"/>
     </FrameLayout>
+    </ScrollView>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="15dp"
         android:fitsSystemWindows="true"
         android:background="@color/colorModule">
     </FrameLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"

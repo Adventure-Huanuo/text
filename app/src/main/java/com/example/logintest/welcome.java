@@ -15,6 +15,10 @@ public class welcome extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        if((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0){
+            finish();
+            return;
+        }
         super.onCreate(savedInstanceState);
         // 显示欢迎界面
         setContentView(R.layout.entermovie);
