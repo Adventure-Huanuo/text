@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Map dataMap = new HashMap();
                     dataMap.put("username", use);
                     dataMap.put("Password", pas);
-                    code = new HttpRequestor().doPost("http://172.16.201.7:8080/HuanuoServer/login", dataMap);
+                    code = new HttpRequestor().doPost("http://172.16.201.17:8080/HuanuoServer/login", dataMap);
                     if (code.equals("1")) {
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
