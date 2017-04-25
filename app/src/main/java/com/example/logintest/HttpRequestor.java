@@ -106,6 +106,8 @@ public class HttpRequestor {
         HttpURLConnection httpURLConnection = (HttpURLConnection)connection;
         httpURLConnection.setDoOutput(true);
         httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setConnectTimeout(3000);
+        httpURLConnection.setReadTimeout(3000);
         httpURLConnection.setRequestProperty("Accept-Charset", charset);
         httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
         httpURLConnection.setRequestProperty("Content-Length", String.valueOf(parameterBuffer.length()));
