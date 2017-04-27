@@ -2,6 +2,7 @@ package com.example.logintest;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -76,17 +79,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void run() {
                 String use = accountEdit.getText().toString();
                 String pas = passwordEdit.getText().toString();
-                String response = "请检查网络设置";
                 String code;
-
                 try {
                     Map dataMap = new HashMap();
                     dataMap.put("username", use);
                     dataMap.put("Password", pas);
                     code = new HttpRequestor().doPost("http://172.16.201.17:8080/HuanuoServer/login", dataMap);
-                    //code = new HttpRequestor().doPost("http://www.12306.cn/mormhweb/", dataMap);
-                    System.out.println(code);
-                    //showResponse(code);
                     if (code.equals("1")) {
                         editor=pref.edit();
                         if(checkBox2.isChecked()){
@@ -100,32 +98,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         startActivity(intent);
                         finish();
                     } else if (code.equals("-1")) {
-                        //Toast.makeText(LoginActivity.this, "密码不正确", Toast.LENGTH_SHORT).show();
-                        //showResponse("密码不正确");
-                        response = "密码不正确";
-                    } else if (code.equals("-2")) {
-                        //Toast.makeText(LoginActivity.this, "帐号不存在", Toast.LENGTH_SHORT).show();
-                        //showResponse("帐号不存在");
-                        response = "帐号不存在";
+                        Looper.prepare();
+                        Toast.makeText(LoginActivity.this, "密码不正确", Toast.LENGTH_SHORT).show();
+                        Looper.loop();
                     } else {
-                        //Toast.makeText(LoginActivity.this, "请检查网络设置", Toast.LENGTH_SHORT).show();
-                        //showResponse("请检查网络设置");
-                        response = "请检查网络设置";
+                        Looper.prepare();
+                        Toast.makeText(LoginActivity.this, "帐号不存在", Toast.LENGTH_SHORT).show();
+                        Looper.loop();
                     }
-                    showResponse(response);
                 } catch (Exception e) {
                     e.getMessage();
+                    Looper.prepare();
+                    Toast.makeText(LoginActivity.this, "请检查网络设置", Toast.LENGTH_SHORT).show();
+                    Looper.loop();
                 }
             }
         }).start();
-    }
-    private  void showResponse(final String response){
-        runOnUiThread(new Runnable(){
-            @Override
-            public void run(){
-                //在这里进行UI操作，将结果显示到界面上
-                responseText.setText(response);
-            }
-        });
     }
 }
