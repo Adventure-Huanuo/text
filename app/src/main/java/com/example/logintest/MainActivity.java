@@ -18,7 +18,9 @@ import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 import static com.example.logintest.R.id.image;
+import static com.example.logintest.R.id.image2;
 import static com.example.logintest.R.id.image3;
+import static com.example.logintest.R.id.text2;
 import static com.example.logintest.R.mipmap.phone;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,4 +50,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
-

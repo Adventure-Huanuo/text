@@ -1,7 +1,8 @@
 package com.example.logintest;
 
 import android.content.Intent;
-import android.os.Looper;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
@@ -12,24 +13,24 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
     private EditText accountEdit;
     private EditText passwordEdit;
     private Button login;
     private CheckBox checkBox1;
     private CheckBox checkBox2;
     private TextView responseText;
-    private String code = "??";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
         accountEdit=(EditText)findViewById(R.id.account);
         passwordEdit=(EditText)findViewById(R.id.password);
         login=(Button) findViewById(R.id.login);
@@ -40,6 +41,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         login.setOnClickListener(this);
         checkBox1=(CheckBox) findViewById(R.id.checkBox1);
         checkBox2=(CheckBox) findViewById(R.id.checkBox2);
+        boolean isRemember=pref.getBoolean("checkBox2",false);
+        if (isRemember){
+            String account =pref.getString("account","");
+            String password=pref.getString("password","");
+            accountEdit.setText(account);
+            checkBox2.setChecked(true);
+
+        }
         checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -56,9 +65,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void  onClick(View v) {
         if (v.getId() == R.id.login){
-            if (code.equals("??")) {
-                Toast.makeText(LoginActivity.this, "请检查网络设置", Toast.LENGTH_SHORT).show();
-            }
             sendRequestWithHttpURLConnection();
         }
     }
@@ -70,33 +76,56 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void run() {
                 String use = accountEdit.getText().toString();
                 String pas = passwordEdit.getText().toString();
-                //String response = "请检查网络设置";
+                String response = "请检查网络设置";
+                String code;
+
                 try {
                     Map dataMap = new HashMap();
                     dataMap.put("username", use);
                     dataMap.put("Password", pas);
                     code = new HttpRequestor().doPost("http://172.16.201.17:8080/HuanuoServer/login", dataMap);
+                    //code = new HttpRequestor().doPost("http://www.12306.cn/mormhweb/", dataMap);
+                    System.out.println(code);
+                    //showResponse(code);
                     if (code.equals("1")) {
+                        editor=pref.edit();
+                        if(checkBox2.isChecked()){
+                            editor.putBoolean("checkBox2",true);
+                            editor.putString("account",use);
+                            editor.putString("password",pas);
+                        }else {
+                            editor.clear();
+                        }editor.apply();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                     } else if (code.equals("-1")) {
-                        Looper.prepare();
-                        Toast.makeText(LoginActivity.this, "密码不正确", Toast.LENGTH_SHORT).show();
-                        Looper.loop();
+                        //Toast.makeText(LoginActivity.this, "密码不正确", Toast.LENGTH_SHORT).show();
+                        //showResponse("密码不正确");
+                        response = "密码不正确";
                     } else if (code.equals("-2")) {
-                        Looper.prepare();
-                        Toast.makeText(LoginActivity.this, "帐号不存在", Toast.LENGTH_SHORT).show();
-                        Looper.loop();
+                        //Toast.makeText(LoginActivity.this, "帐号不存在", Toast.LENGTH_SHORT).show();
+                        //showResponse("帐号不存在");
+                        response = "帐号不存在";
                     } else {
-                        Looper.prepare();
-                        Toast.makeText(LoginActivity.this, "请检查网络设置", Toast.LENGTH_SHORT).show();
-                        Looper.loop();
+                        //Toast.makeText(LoginActivity.this, "请检查网络设置", Toast.LENGTH_SHORT).show();
+                        //showResponse("请检查网络设置");
+                        response = "请检查网络设置";
                     }
+                    showResponse(response);
                 } catch (Exception e) {
                     e.getMessage();
                 }
             }
         }).start();
+    }
+    private  void showResponse(final String response){
+        runOnUiThread(new Runnable(){
+            @Override
+            public void run(){
+                //在这里进行UI操作，将结果显示到界面上
+                responseText.setText(response);
+            }
+        });
     }
 }
