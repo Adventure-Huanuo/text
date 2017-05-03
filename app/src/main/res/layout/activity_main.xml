@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -7,7 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:fitsSystemWindows="true"
-        android:background="@color/colorBackgroud">
+        android:background="@color/colorBackgroud"
+        android:id="@+id/frame_0">
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="224dp"
@@ -52,9 +53,11 @@
             android:layout_marginLeft="328dp" />
     </FrameLayout>
     <FrameLayout
+        android:id="@+id/frame_1"
         android:layout_width="match_parent"
         android:layout_height="66dp"
-        android:background="@color/colorBackgroud">
+        android:background="@color/colorBackgroud"
+        android:layout_below='@id/frame_0'>
         <ImageView
             android:id="@+id/image_view_2"
             android:layout_width="wrap_content"
@@ -128,28 +131,13 @@
     </FrameLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="430dp">
-        <FrameLayout
+        android:layout_height="430dp"
+        android:layout_below='@id/frame_1'>
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="430dp"
             android:background="@color/colorMain">
-            <ImageView
-                android:id="@+id/image_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/money"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="21dp"/>
-            <TextView
-                android:id="@+id/text_1"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="财务管理"
-                android:textColor="@color/colorText"
-                android:textSize="12dp"
-                android:textStyle="normal"
-                android:layout_marginTop="53dp"
-                android:layout_marginLeft="38dp"/>
+
             <ImageView
                 android:id="@+id/image_2"
                 android:layout_width="wrap_content"
@@ -312,8 +300,9 @@
                 android:textColor="@color/colorBackgroud"
                 android:textSize="12sp"
                 android:textStyle="normal"
-                android:layout_marginTop="322dp"
-                android:layout_marginLeft="304dp"/>
+                android:layout_alignBottom='@id/text01'
+                android:layout_alignParentRight='true'
+                android:layout_marginRight='12dp'/>
             <TextView
                 android:id="@+id/text03"
                 android:layout_width="wrap_content"
@@ -338,22 +327,13 @@
                 android:id="@+id/text_a"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-                android:text="荣膺2016年全球光通信最具竞争力企业十强"
+                android:text="公司精彩亮相第三届世界互联网大会"
                 android:textColor="@color/colorText"
                 android:textSize="12sp"
                 android:textStyle="normal"
                 android:layout_marginTop="394dp"
                 android:layout_marginLeft="12dp"/>
-            <TextView
-                android:id="@+id/text_b"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:text="公司精彩亮相第三届世界互联网大会"
-                android:textColor="@color/colorText"
-                android:textSize="12sp"
-                android:textStyle="normal"
-                android:layout_marginTop="418dp"
-                android:layout_marginLeft="12dp"/>
+
             <TextView
                 android:id="@+id/text05"
                 android:layout_width="wrap_content"
@@ -378,8 +358,9 @@
                 android:textColor="@color/colorBackgroud"
                 android:textSize="12sp"
                 android:textStyle="normal"
-                android:layout_marginTop="446dp"
-                android:layout_marginLeft="304dp"/>
+                android:layout_alignBottom='@id/text05'
+                android:layout_alignParentRight='true'
+                android:layout_marginRight='12dp'/>
             <TextView
                 android:id="@+id/text07"
                 android:layout_width="wrap_content"
@@ -391,6 +372,16 @@
                 android:layout_marginTop="472dp"
                 android:layout_marginLeft="12dp"/>
             <TextView
+                android:id="@+id/text_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="华诺OA系统运行状态公告"
+                android:textColor="@color/colorText"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_marginTop="520dp"
+                android:layout_marginLeft="12dp"/>
+            <TextView
                 android:id="@+id/text08"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
@@ -400,8 +391,17 @@
                 android:textStyle="normal"
                 android:layout_marginTop="496dp"
                 android:layout_marginLeft="12dp"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/colorModule"
+                android:layout_below="@+id/text_a"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp">
+            </FrameLayout>
             <TextView
-                android:id="@+id/text_aa"
+                android:id="@+id/text_1a"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:text="企业活动"
@@ -411,17 +411,24 @@
                 android:layout_marginTop="567dp"
                 android:layout_marginLeft="12dp"/>
             <TextView
-                android:id="@+id/text_bb"
+                android:layout_width="48dp"
+                android:layout_height="0.5dp"
+                android:background="@color/colorBackgroud"
+                android:layout_marginTop="582dp"
+                android:layout_marginLeft="12dp"/>
+            <TextView
+                android:id="@+id/text_1b"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:text="more"
                 android:textColor="@color/colorBackgroud"
                 android:textSize="12sp"
                 android:textStyle="normal"
-                android:layout_marginTop="567dp"
-                android:layout_marginLeft="304dp"/>
+                android:layout_alignBottom='@id/text_1a'
+                android:layout_alignParentRight='true'
+                android:layout_marginRight='12dp'/>
             <TextView
-                android:id="@+id/text_cc"
+                android:id="@+id/text_1c"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:text="三月安全健康关注月"
@@ -431,7 +438,7 @@
                 android:layout_marginTop="591dp"
                 android:layout_marginLeft="12dp"/>
             <TextView
-                android:id="@+id/text_dd"
+                android:id="@+id/text_1d"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:text="【行走一万步】健身活动"
@@ -441,7 +448,7 @@
                 android:layout_marginTop="615dp"
                 android:layout_marginLeft="12dp"/>
             <TextView
-                android:id="@+id/text_ee"
+                android:id="@+id/text_1e"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:text="华诺精选书单——【列书单得新书】"
@@ -450,18 +457,119 @@
                 android:textStyle="normal"
                 android:layout_marginTop="639dp"
                 android:layout_marginLeft="12dp"/>
-        </FrameLayout>
+            <FrameLayout
+                android:id="@+id/frame1"
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/colorModule"
+                android:layout_below="@+id/text_1e"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp">
+            </FrameLayout>
+            <TextView
+                android:id="@+id/text_aa"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="谁与我同在"
+                android:textColor="@color/colorBackgroud"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_below="@id/frame1"
+                android:layout_alignLeft="@id/text_1a"
+                android:layout_marginTop="12dp"/>
+            <TextView
+                android:layout_width="48dp"
+                android:layout_height="0.5dp"
+                android:background="@color/colorBackgroud"
+                android:layout_below="@+id/text_aa"
+                android:id="@+id/text_aaa"
+                android:layout_alignLeft="@id/text_1a"/>
+            <TextView
+                android:id="@+id/text_bb"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="more"
+                android:textColor="@color/colorBackgroud"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_alignBottom='@id/text_aa'
+                android:layout_alignParentRight='true'
+                android:layout_marginRight='12dp'/>
+            <TextView
+                android:id="@+id/text_cc"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="刘丽 801286 Radio-EN6 li.liu@huanuo-nokia.com"
+                android:textColor="@color/colorText"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_below="@id/text_aaa"
+                android:layout_alignLeft="@id/text_1a"/>
+            <TextView
+                android:id="@+id/text_dd"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="曹广路 801186 Radio-EN6 guanglu.cao@huanuo-nokia.com"
+                android:textColor="@color/colorText"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_below="@id/text_cc"
+                android:layout_alignLeft="@id/text_1a"/>
+            <TextView
+                android:id="@+id/text_ee"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="蔡如男 801186 Radio-EN6 runan.cai@huanuo-nokia.com"
+                android:textColor="@color/colorText"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                android:layout_below="@id/text_dd"
+                android:layout_alignLeft="@id/text_1a"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/colorModule"
+                android:layout_below="@+id/text_a"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp">
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/colorModule"
+                android:layout_below="@+id/text_10"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="8dp">
+            </FrameLayout>
+            <com.example.logintest.moy_bt
+                android:id="@+id/image_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_alignBottom="@+id/text_2"
+                android:layout_alignLeft="@+id/text_01"
+                android:layout_alignStart="@+id/text_01" />
+        </RelativeLayout>
     </ScrollView>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="15dp"
-        android:fitsSystemWindows="true"
-        android:background="@color/colorModule">
-    </FrameLayout>
     <include
         layout="@layout/bottom_menu"
         android:layout_height="48dp"
         android:layout_width="match_parent"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:id="@+id/include">
     </include>
-</LinearLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:fitsSystemWindows="true"
+        android:background="@color/colorModule"
+        android:layout_above="@+id/include"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    </FrameLayout>
+</RelativeLayout>

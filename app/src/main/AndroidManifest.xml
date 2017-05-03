@@ -28,13 +28,17 @@
             android:name=".MainActivity"
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".LoginActivity"
             android:alwaysRetainTaskState="true"
-            android:launchMode="singleTask" />
-        <activity android:name=".document" />
-        <activity android:name=".phone" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".document"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".phone"
+            android:screenOrientation="portrait"/>
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -43,8 +47,11 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".document_1" />
-        <activity android:name=".PhoneList"></activity>
+        <activity android:name=".document_1"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PhoneList"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

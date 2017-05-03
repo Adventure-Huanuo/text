@@ -1,11 +1,15 @@
 package com.example.logintest;
 
+import android.content.Intent;
 import android.os.OperationCanceledException;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +27,38 @@ public class phone extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         PhonegroupAdapter adapter=new PhonegroupAdapter(phoneGroupList);
         recyclerView.setAdapter(adapter);
+        ImageView ImageView1 = (ImageView) findViewById(R.id.image3);
+        ImageView ImageView2 = (ImageView) findViewById(R.id.image2);
+        TextView TextView_1 = (TextView) findViewById(R.id.text1);
+        ImageView ImageView_1= (ImageView) findViewById(R.id.image1);
+        ImageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(phone.this, document.class);
+                startActivity(intent);
+            }
+        });
+        ImageView2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(phone.this, phone.class);
+                startActivity(intent);
+            }
+        });
+        ImageView_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(phone.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        TextView_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(phone.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void initPhoneGroups(){
         for (int i=0;i<1;i++){
