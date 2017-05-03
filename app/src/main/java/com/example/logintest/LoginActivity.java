@@ -50,8 +50,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         boolean isRemember=pref.getBoolean("checkBox2",false);
         if (isRemember){
             String account =pref.getString("account","");
-            String password=pref.getString("password","");
+            String password =pref.getString("password","");
             accountEdit.setText(account);
+            passwordEdit.setText(password);
             checkBox2.setChecked(true);
 
         }
