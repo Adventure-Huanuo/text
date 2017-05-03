@@ -1,13 +1,16 @@
 package com.example.logintest;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Looper;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -114,5 +117,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         }).start();
+    }
+
+    // 点击手机HOME键，使应用程序退到后台；当再次打开App时，当前显示页面还是刚才退出时的页面
+    // 点击返回键，弹出提示窗口
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK) {
+            // 监控返回键
+            new AlertDialog.Builder(LoginActivity.this).setTitle("提示")
+                    .setIconAttribute(android.R.attr.alertDialogIcon)
+                    .setMessage("确定要退出吗?")
+                    .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            LoginActivity.this.finish();
+                        }})
+                    .setNegativeButton("取消", null)
+                    .create().show();
+            return false;
+        } else if(keyCode == KeyEvent.KEYCODE_MENU) {
+            // 监控菜单键
+            Toast.makeText(LoginActivity.this, "Menu", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
