@@ -1,5 +1,6 @@
 package com.example.logintest;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.util.AsyncListUtil;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
