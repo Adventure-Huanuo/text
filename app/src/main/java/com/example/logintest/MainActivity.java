@@ -149,10 +149,10 @@ public class MainActivity extends Activity implements OnClickListener,OnPageChan
                  iv_friend.setImageResource(R.mipmap.document_2);
                  iv_setting.setImageResource(R.mipmap.meyself_2);
                 // TextView置为白色
-                 tv_home.setTextColor(0xffffffff);
-                 tv_address.setTextColor(0xffffffff);
-                 tv_friend.setTextColor(0xffffffff);
-                 tv_setting.setTextColor(0xffffffff);
+                 tv_home.setTextColor(0x000000);
+                 tv_address.setTextColor(0x000000);
+                 tv_friend.setTextColor(0x000000);
+                 tv_setting.setTextColor(0x000000);
              }
 
                  @Override
