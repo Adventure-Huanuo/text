@@ -142,17 +142,17 @@ public class MainActivity extends Activity implements OnClickListener,OnPageChan
 
              }
 
-                 private void restartBotton() {
+        private void restartBotton() {
                  // ImageView置为灰色
                  iv_home.setImageResource(R.mipmap.firstpaper);
                  iv_address.setImageResource(R.mipmap.phone_2);
                  iv_friend.setImageResource(R.mipmap.document_2);
                  iv_setting.setImageResource(R.mipmap.meyself_2);
-                // TextView置为白色
-                 tv_home.setTextColor(0x000000);
-                 tv_address.setTextColor(0x000000);
-                 tv_friend.setTextColor(0x000000);
-                 tv_setting.setTextColor(0x000000);
+                // TextView置为灰色
+                 tv_home.setTextColor(0xff666666);
+                 tv_address.setTextColor(0xff666666);
+                 tv_friend.setTextColor(0xff666666);
+                 tv_setting.setTextColor(0xff666666);
              }
 
                  @Override
