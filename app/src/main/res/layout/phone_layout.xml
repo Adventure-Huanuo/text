@@ -14,32 +14,24 @@
         android:textSize="20dp"
         android:textColor="#ffffff"
         android:gravity="center"/>
-    <ImageView
-        android:id="@+id/search_image"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:background="@drawable/search"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="16dp" />
     <EditText
-        android:id="@+id/search_text"
-        android:layout_width="122dp"
+        android:id="@+id/search_image"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:textColorHint="#ffffff"
+        android:drawableLeft="@mipmap/search"
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="12dp"
+        android:hint="搜索"
+        android:textSize="16dp"
         android:background="@null"
-        android:layout_marginTop="16dp"
-        android:textCursorDrawable="@null"/>
+        android:textCursorDrawable="@null"
+        android:drawablePadding="12dp" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/phone_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorMain"
-        android:layout_marginTop="48dp" />
-    <include
-        layout="@layout/bottom_menu_select1"
-        android:layout_height="48dp"
-        android:layout_width="match_parent"
-        android:layout_alignParentBottom="true">
-    </include>
+        android:layout_marginTop="85dp" />
 </RelativeLayout>

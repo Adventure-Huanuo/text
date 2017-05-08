@@ -84,12 +84,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String use = accountEdit.getText().toString();
                 String pas = passwordEdit.getText().toString();
                 String code;
+
                 try {
                     Map dataMap = new HashMap();
                     dataMap.put("username", use);
                     dataMap.put("Password", pas);
-                    code = new HttpRequestor().doPost("http://172.16.201.17:8080/HuanuoServer/login", dataMap);
-                    if (code.equals("1")) {
+                    code="1";
+                  //  code = new HttpRequestor().doPost("http://172.16.201.17:8080/HuanuoServer/login", dataMap);
+                   if (code.equals("1")) {
                         editor=pref.edit();
                         if(checkBox2.isChecked()){
                             editor.putBoolean("checkBox2",true);
