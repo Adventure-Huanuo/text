@@ -556,6 +556,4 @@
                 android:layout_alignStart="@+id/text_01" />
         </RelativeLayout>
     </ScrollView>
-
-
 </RelativeLayout>

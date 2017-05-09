@@ -117,22 +117,22 @@ public class MainActivity extends Activity implements OnClickListener,OnPageChan
                  switch (v.getId()) {
                      case R.id.ll_home:
                              iv_home.setImageResource(R.mipmap.leftlogo);
-                             tv_home.setTextColor(0xff1B940A);
+                             tv_home.setTextColor(0xff036EB8);
                              viewPager.setCurrentItem(0);
                              break;
                      case R.id.ll_address:
                              iv_address.setImageResource(R.mipmap.phone_1);
-                             tv_address.setTextColor(0xff1B940A);
+                             tv_address.setTextColor(0xff036EB8);
                              viewPager.setCurrentItem(1);
                              break;
                      case R.id.ll_friend:
                              iv_friend.setImageResource(R.mipmap.document);
-                             tv_friend.setTextColor(0xff1B940A);
+                             tv_friend.setTextColor(0xff036EB8);
                              viewPager.setCurrentItem(2);
                              break;
                      case R.id.ll_setting:
                              iv_setting.setImageResource(R.mipmap.myself);
-                             tv_setting.setTextColor(0xff1B940A);
+                             tv_setting.setTextColor(0xff036EB8);
                              viewPager.setCurrentItem(3);
                              break;
 
@@ -172,19 +172,19 @@ public class MainActivity extends Activity implements OnClickListener,OnPageChan
                 switch (arg0) {
                      case 0:
                              iv_home.setImageResource(R.mipmap.leftlogo);
-                             tv_home.setTextColor(0xff1B940A);
+                             tv_home.setTextColor(0xff036EB8);
                              break;
                      case 1:
                              iv_address.setImageResource(R.mipmap.phone_1);
-                             tv_address.setTextColor(0xff1B940A);
+                             tv_address.setTextColor(0xff036EB8);
                              break;
                      case 2:
                              iv_friend.setImageResource(R.mipmap.document);
-                             tv_friend.setTextColor(0xff1B940A);
+                             tv_friend.setTextColor(0xff036EB8);
                              break;
                      case 3:
                              iv_setting.setImageResource(R.mipmap.myself);
-                             tv_setting.setTextColor(0xff1B940A);
+                             tv_setting.setTextColor(0xff036EB8);
                              break;
 
                      default:
