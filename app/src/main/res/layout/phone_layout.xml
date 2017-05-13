@@ -14,14 +14,6 @@
         android:textSize="20dp"
         android:textColor="#ffffff"
         android:gravity="center"/>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/phone_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorMain"
-        android:layout_below="@+id/phone_list" />
-
     <EditText
         android:id="@+id/search_image"
         android:layout_width="wrap_content"
@@ -40,4 +32,365 @@
         android:layout_alignParentTop="true"
         android:layout_alignBottom="@+id/phone_list"
         android:textColorHint="@color/colorMain"/>
+    <ImageView
+        android:id="@+id/phonelist1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="58dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/CO"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="50dp"
+        android:text="Communication-Operation"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next1"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/phone_list"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView16"
+        android:layout_below="@+id/CO"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="101dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/EPC"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="93dp"
+        android:text="EPC-Product Support"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next2"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView16"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView17"
+        android:layout_below="@+id/EPC"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist3"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="144dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/FC"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="136dp"
+        android:text="Finance-Control"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next3"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView17"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView18"
+        android:layout_below="@+id/FC"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist4"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="187dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/GDC"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="179dp"
+        android:text="GDC"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next4"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView18"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView19"
+        android:layout_below="@+id/GDC"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist5"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="230dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/GMOffice"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="222dp"
+        android:text="GM-Office"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next5"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView19"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView20"
+        android:layout_below="@+id/GMOffice"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist6"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="273dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/HR"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="265dp"
+        android:text="Human-Resource"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next6"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView20"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView21"
+        android:layout_below="@+id/HR"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist7"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="316dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/Nokia"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="308dp"
+        android:text="Nokia"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next7"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView21"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView22"
+        android:layout_below="@+id/Nokia"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist8"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="359dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/NM_SON"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="351dp"
+        android:text="NM_SON"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next8"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView22"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView23"
+        android:layout_below="@+id/NM_SON"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist9"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="402dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/ProMan"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="394dp"
+        android:text="ProjectManagement"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next9"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView23"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView24"
+        android:layout_below="@+id/ProMan"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist10"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="445dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/PM"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="437dp"
+        android:text="PM"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next10"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView24"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView25"
+        android:layout_below="@+id/PM"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist11"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="488dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/RSO"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="480dp"
+        android:text="RSO"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next11"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView25"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView26"
+        android:layout_below="@+id/RSO"
+        android:background="#7b7273"/>
+    <ImageView
+        android:id="@+id/phonelist12"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/phonelist"
+        android:layout_marginTop="531dp"
+        android:layout_marginLeft="12dp" />
+    <TextView
+        android:id="@+id/SISD"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_marginTop="523dp"
+        android:text="SISD"
+        android:paddingLeft="44dp"
+        android:gravity="center_vertical"
+        android:textSize="12dp"/>
+    <ImageView
+        android:id="@+id/next12"
+        android:layout_width="8dp"
+        android:layout_height="12dp"
+        android:background="@drawable/next"
+        android:layout_below="@+id/textView26"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginLeft="344dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/textView27"
+        android:layout_below="@+id/SISD"
+        android:background="#7b7273"/>
 </RelativeLayout>

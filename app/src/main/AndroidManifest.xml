@@ -52,12 +52,12 @@
         <activity
             android:name=".document_1"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".PhoneList"
-            android:screenOrientation="portrait"></activity>
-
-        <activity android:name=".PhoneListdetial"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".PhoneListdetial" />
+        <activity android:name=".AlterPassword" />
+        <activity android:name=".Me"></activity>
     </application>
 
 </manifest>

@@ -22,11 +22,11 @@ public class phone extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.phone_layout);
         initPhoneGroups();
-        RecyclerView recyclerView=(RecyclerView)findViewById(R.id.phone_recycler_view);
-        LinearLayoutManager layoutManager =new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        PhonegroupAdapter adapter=new PhonegroupAdapter(phoneGroupList);
-        recyclerView.setAdapter(adapter);
+        //RecyclerView recyclerView=(RecyclerView)findViewById(R.id.phone_recycler_view);
+        //LinearLayoutManager layoutManager =new LinearLayoutManager(this);
+        //recyclerView.setLayoutManager(layoutManager);
+        //PhonegroupAdapter adapter=new PhonegroupAdapter(phoneGroupList);
+        //recyclerView.setAdapter(adapter);
         ImageView ImageView1 = (ImageView) findViewById(R.id.image3);
         ImageView ImageView2 = (ImageView) findViewById(R.id.image2);
         TextView TextView_1 = (TextView) findViewById(R.id.text1);

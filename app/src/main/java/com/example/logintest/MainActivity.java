@@ -96,7 +96,7 @@ public class MainActivity extends Activity implements OnClickListener,OnPageChan
                  View page_01 = View.inflate(MainActivity.this, R.layout.page01, null);
                  View page_02 = View.inflate(MainActivity.this, R.layout.phone_layout, null);
                  View page_03 = View.inflate(MainActivity.this, R.layout.document_layout, null);
-                 View page_04 = View.inflate(MainActivity.this, R.layout.activity_phone_listdetial, null);
+                 View page_04 = View.inflate(MainActivity.this, R.layout.me_activity, null);
 
                  views = new ArrayList<View>();
                  views.add(page_01);
