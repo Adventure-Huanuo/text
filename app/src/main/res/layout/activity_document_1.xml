@@ -4,7 +4,7 @@
     android:id="@+id/activity_document_1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.logintest.document_1">
+    tools:context="com.example.lee.myapplication.document_1">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"

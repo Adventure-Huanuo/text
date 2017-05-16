@@ -2,8 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_checked="true"
-        android:drawable="@drawable/myself" />
+        android:drawable="@drawable/addlist_pressed" />
     <item
         android:state_checked="false"
-        android:drawable="@drawable/meyself_2"/>
+        android:drawable="@drawable/addlist_normal"/>
 </selector>

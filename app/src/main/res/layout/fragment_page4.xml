@@ -4,7 +4,7 @@
     android:id="@+id/activity_phone_listdetial"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.lee.myapplication.PhoneListdetial">
+    tools:context="com.example.lee.myapplication.document_1">
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,7 +63,11 @@
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView" />
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
+</LinearLayout>
     <TextView
         android:text="个人信息"
         android:textColor="#7C7374"
@@ -232,13 +236,14 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView_1"
+        android:id="@+id/next_1"
         android:src="@mipmap/next"
         android:layout_marginRight="12dp"
         android:layout_alignBottom="@+id/textView3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="11dp" />
+        android:layout_marginEnd="11dp"
+        />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
