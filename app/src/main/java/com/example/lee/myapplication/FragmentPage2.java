@@ -1,11 +1,13 @@
 package com.example.lee.myapplication;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -35,7 +37,9 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ImageView bt2 = (ImageView) mView.findViewById(R.id.next1);
+        ImageView serchImage = (ImageView) mView.findViewById(R.id.search_image);
         bt2.setOnClickListener(this);
+        serchImage.setOnClickListener(this);
     }
 
     @Override
@@ -59,6 +63,12 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.next1:
                 Toast.makeText(mActivity,"Communication", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.search_image:
+                Intent intent = new Intent(mActivity,PhoneListdetial.class);
+                String searchText = ((EditText) mView.findViewById(R.id.search_text)).getText().toString();
+                intent.putExtra("str",searchText);
+                startActivity(intent);
                 break;
         }
     }
