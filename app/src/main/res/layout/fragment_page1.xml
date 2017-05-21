@@ -18,7 +18,7 @@
             android:layout_marginLeft="6dp">
             <EditText
                 android:id="@+id/image_view_4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@mipmap/search"
                 android:layout_gravity="center"
@@ -52,83 +52,56 @@
             android:layout_marginTop="3dp"
             android:layout_marginLeft="328dp" />
     </FrameLayout>
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/frame_1"
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:background="@color/colorBackgroud"
-        android:layout_below='@id/frame_0'>
-        <ImageView
-            android:id="@+id/image_view_2"
+        android:layout_below='@id/frame_0'
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/img_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/newwork"
-            android:layout_marginLeft="48dp"/>
-        <TextView
-            android:id="@+id/text_view_2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
             android:text="新建工作"
+            android:drawableTop="@mipmap/newwork"
             android:textColor="@color/colorMain"
             android:textSize="12dp"
-            android:textStyle="normal"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="38dp"/>
-        <ImageButton
-            android:id="@+id/image_view_1"
+            android:background="@null"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/img_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/hr"
-            android:layout_marginLeft="133dp"
-            android:adjustViewBounds="false"
-            />
-        <TextView
-            android:id="@+id/text_view_1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:drawableTop="@mipmap/hr"
+            android:textColor="@color/colorMain"
             android:text="HR系统"
-            android:textColor="@color/colorMain"
             android:textSize="12dp"
-            android:textStyle="normal"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="125dp"/>
-        <ImageView
-            android:id="@+id/image_view_3"
+            android:background="@null"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/img_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/technology"
-            android:layout_marginLeft="220dp"
-            />
-        <TextView
-            android:id="@+id/text_view_3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:drawableTop="@mipmap/technology"
+            android:textColor="@color/colorMain"
             android:text="技术资源"
-            android:textColor="@color/colorMain"
             android:textSize="12dp"
-            android:textStyle="normal"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="212dp"/>
-
-        <ImageView
-            android:id="@+id/image_view_5"
+            android:background="@null"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/img_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/train"
-            android:layout_marginLeft="303dp"
-            />
-        <TextView
-            android:id="@+id/text_view_5"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:drawableTop="@mipmap/train"
             android:text="培训系统"
-            android:textColor="@color/colorMain"
             android:textSize="12dp"
-            android:textStyle="normal"
-            android:layout_marginTop="32dp"
-            android:layout_marginLeft="292dp"/>
-
-    </FrameLayout>
+            android:background="@null"
+            android:layout_weight="1"
+            android:textColor="@color/colorMain"
+            />
+    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="430dp"
@@ -137,61 +110,57 @@
             android:layout_width="match_parent"
             android:layout_height="430dp"
             android:background="@color/colorMain">
-
-            <ImageView
-                android:id="@+id/image_2"
-                android:layout_width="wrap_content"
+            //用权重实现按钮位置的平均分配
+            <LinearLayout
+                android:id="@+id/Line_1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/administration"
-                android:layout_marginLeft="133dp"
-                android:layout_marginTop="21dp"
-                />
-            <TextView
-                android:id="@+id/text_2"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="行政管理"
-                android:textColor="@color/colorText"
-                android:textSize="12dp"
-                android:textStyle="normal"
-                android:layout_marginTop="53dp"
-                android:layout_marginLeft="125dp"/>
-            <ImageView
-                android:id="@+id/image_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/human"
-                android:layout_marginLeft="220dp"
-                android:layout_marginTop="21dp"
-                />
-            <TextView
-                android:id="@+id/text_3"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="人事管理"
-                android:textColor="@color/colorText"
-                android:textSize="12dp"
-                android:textStyle="normal"
-                android:layout_marginTop="53dp"
-                android:layout_marginLeft="212dp"/>
-            <ImageView
-                android:id="@+id/image_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/public_1"
-                android:layout_marginLeft="303dp"
-                android:layout_marginTop="21dp"
-                />
-            <TextView
-                android:id="@+id/text_4"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="公共信息"
-                android:textColor="@color/colorText"
-                android:textSize="12dp"
-                android:textStyle="normal"
-                android:layout_marginTop="53dp"
-                android:layout_marginLeft="292dp"/>
+                android:orientation="horizontal"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="21dp">
+                //联合按钮image+text
+                <Button
+                    android:id="@+id/button_moy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="财务管理"
+                    android:drawableTop="@mipmap/money"
+                    android:textColor="@color/colorText"
+                    android:textSize="12dp"
+                    android:background="@null"
+                    android:layout_weight="1" />
+                <Button
+                    android:id="@+id/button_ad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="行政管理"
+                    android:drawableTop="@mipmap/administration"
+                    android:textColor="@color/colorText"
+                    android:textSize="12dp"
+                    android:background="@null"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/button_hr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人事管理"
+                    android:drawableTop="@mipmap/human"
+                    android:textColor="@color/colorText"
+                    android:textSize="12dp"
+                    android:background="@null"
+                    android:layout_weight="1" />
+                <Button
+                    android:id="@+id/button_pb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="公共信息"
+                    android:drawableTop="@mipmap/public_1"
+                    android:textColor="@color/colorText"
+                    android:textSize="12dp"
+                    android:background="@null"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
             <TextView
                 android:id="@+id/button"
                 android:layout_width="match_parent"
@@ -199,79 +168,56 @@
                 android:background="#A9A8A8"
                 android:layout_marginTop="80dp"
                 />
-            <ImageView
-                android:id="@+id/image_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/mywork"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="101dp"/>
-            <TextView
-                android:id="@+id/text_01"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="个人工作台"
-                android:textColor="@color/colorText"
-                android:textSize="12dp"
-                android:textStyle="normal"
-                android:layout_marginTop="133dp"
-                android:layout_marginLeft="38dp"/>
-            <ImageView
-                android:id="@+id/image_02"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/recruit"
-                android:layout_marginLeft="133dp"
-                android:layout_marginTop="101dp"
-                />
-            <TextView
-                android:id="@+id/text_02"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="内部招聘"
-                android:textColor="@color/colorText"
-                android:textSize="12dp"
-                android:textStyle="normal"
-                android:layout_marginTop="133dp"
-                android:layout_marginLeft="125dp"/>
-            <ImageView
-                android:id="@+id/image_03"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/culture"
-                android:layout_marginLeft="220dp"
-                android:layout_marginTop="101dp"
-                />
-            <TextView
-                android:id="@+id/text_03"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="文化建设"
-                android:textColor="@color/colorText"
-                android:textSize="12dp"
-                android:textStyle="normal"
-                android:layout_marginTop="133dp"
-                android:layout_marginLeft="212dp"/>
-            <ImageView
-                android:id="@+id/image_04"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/help"
-                android:layout_marginLeft="303dp"
-                android:layout_marginTop="101dp"
-                />
-            <TextView
-                android:id="@+id/text_04"
-                android:layout_width="wrap_content"
-                android:layout_height="14dp"
-                android:text="系统帮助"
-                android:textColor="@color/colorText"
-                android:textSize="12dp"
-                android:textStyle="normal"
-                android:layout_marginTop="133dp"
-                android:layout_marginLeft="292dp"/>
-            <ImageView
+            <LinearLayout
+                android:id="@+id/Line_2"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="102dp">
+            <Button
+                android:id="@+id/button_mef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个人工作台"
+                android:drawableTop="@mipmap/mywork"
+                android:textColor="@color/colorText"
+                android:textSize="12dp"
+                android:background="@null"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/button_re"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="内部招聘"
+                android:drawableTop="@mipmap/recruit"
+                android:textColor="@color/colorText"
+                android:textSize="12dp"
+                android:background="@null"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/button_cl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文化建设"
+                android:drawableTop="@mipmap/culture"
+                android:textColor="@color/colorText"
+                android:textSize="12dp"
+                android:background="@null"
+                android:layout_weight="1" />
+            <Button
+                android:id="@+id/button_hp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统帮助"
+                android:drawableTop="@mipmap/help"
+                android:textColor="@color/colorText"
+                android:textSize="12dp"
+                android:background="@null"
+                android:layout_weight="1" />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="160dp"
                 android:background="@drawable/vv1">
@@ -546,30 +492,6 @@
                 android:layout_marginTop="8dp">
             </FrameLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_alignBottom="@+id/text_2"
-                android:layout_alignStart="@+id/text_01"
-                android:id="@+id/money1">
-                <ImageView
-                    android:id="@+id/image1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/money"
-                    android:layout_marginLeft="10dp"/>
-                <TextView
-                    android:id="@+id/text_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="14dp"
-                    android:text="财务管理"
-                    android:textColor="@color/colorText"
-                    android:textSize="12dp"
-                    android:textStyle="normal"
-                    android:layout_marginTop="8dp"
-                    />
-            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 

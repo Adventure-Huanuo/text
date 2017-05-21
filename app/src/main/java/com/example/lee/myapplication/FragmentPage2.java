@@ -36,7 +36,7 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ImageView bt2 = (ImageView) mView.findViewById(R.id.next1);
+        Button bt2 = (Button) mView.findViewById(R.id.COM);
         ImageView serchImage = (ImageView) mView.findViewById(R.id.search_image);
         bt2.setOnClickListener(this);
         serchImage.setOnClickListener(this);
@@ -61,8 +61,8 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.next1:
-                Toast.makeText(mActivity,"Communication", Toast.LENGTH_SHORT).show();
+            case R.id.COM:
+                Toast.makeText(mActivity,"Communication-Operation", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.search_image:
                 Intent intent = new Intent(mActivity,PhoneListdetial.class);

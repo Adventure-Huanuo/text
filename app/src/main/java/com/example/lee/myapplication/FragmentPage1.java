@@ -35,8 +35,10 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        LinearLayout bt1 = (LinearLayout) mView.findViewById(R.id.money1);
+        Button bt1 = (Button) mView.findViewById(R.id.button_moy);//获取布局中定义的元素
         bt1.setOnClickListener(this);
+        Button bt2 = (Button) mView.findViewById(R.id.button_ad);
+        bt2.setOnClickListener(this);//为按钮注册监听器
     }
 
     @Override
@@ -54,12 +56,15 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
         super.onDestroy();
 
     }
-
+//使用toast实现按钮点击响应，弹出toast的功能要在onClick方法中编写
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.money1:
+            case R.id.button_moy:
                 Toast.makeText(mActivity,"财务管理", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_ad:
+                Toast.makeText(mActivity,"行政管理", Toast.LENGTH_SHORT).show();//静态方法makeText创建toast对象
                 break;
         }
     }
