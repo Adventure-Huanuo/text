@@ -27,6 +27,7 @@ public class PhoneListdetial extends AppCompatActivity {
             String searchText=intent.getStringExtra("str");
             ImageView iv = (ImageView)this.findViewById(R.id.search_image);
             TextView tv4 = (TextView)this.findViewById(R.id.textView4);
+            TextView tv17 = (TextView)this.findViewById(R.id.textView17);
             TextView tv7 = (TextView)this.findViewById(R.id.textView7);
             TextView tv9 = (TextView)this.findViewById(R.id.textView9);
             TextView tv11 = (TextView)this.findViewById(R.id.textView11);
@@ -41,23 +42,27 @@ public class PhoneListdetial extends AppCompatActivity {
             if(searchText.equals("蔡如男")|searchText.equals("801186")) {
                 head = "http://img.woyaogexing.com/2016/11/16/d7db063bbd3c0996!200x200.jpg";
                 tv4.setText("蔡如男");
+                tv17.setText("801186");
                 tv11.setText("18573197193");
                 tv13.setText("runan.cai@huanuo-nokia.com");
                 tv15.setText("上海联通");
             } else if (searchText.equals("刘丽")|searchText.equals("801244")) {
                 head = "http://img.woyaogexing.com/2016/11/16/724d3cce0ad9624e!200x200.jpg";
                 tv4.setText("刘丽");
+                tv17.setText("801244");
                 tv11.setText("18673132027");
                 tv13.setText("li.liu@huanuo-nokia.com");
                 tv15.setText("上海联通");
             } else if (searchText.equals("杜晓涵")|searchText.equals("801254")) {
                 head = "http://img.woyaogexing.com/2016/11/16/fda1a73244f18c02!200x200.jpg";
                 tv4.setText("杜晓涵");
+                tv17.setText("801254");
                 tv11.setText("18673132559");
                 tv13.setText("xiaohan.du@huanuo-nokia.com");
                 tv15.setText("宁波移动");
             } else {
                 tv4.setText(null);
+                tv17.setText(null);
                 tv7.setText(null);
                 tv9.setText(null);
                 tv11.setText(null);
