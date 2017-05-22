@@ -1,5 +1,6 @@
 package com.example.lee.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -35,10 +37,32 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Button bt1 = (Button) mView.findViewById(R.id.button_moy);//获取布局中定义的元素
-        bt1.setOnClickListener(this);
-        Button bt2 = (Button) mView.findViewById(R.id.button_ad);
-        bt2.setOnClickListener(this);//为按钮注册监听器
+        Button bt1 = (Button) mView.findViewById(R.id.img_1);//获取布局中定义的元素
+        bt1.setOnClickListener(this);//为按钮注册监听器
+        Button bt2 = (Button) mView.findViewById(R.id.img_2);
+        bt2.setOnClickListener(this);
+        Button bt3 = (Button) mView.findViewById(R.id.img_3);
+        bt3.setOnClickListener(this);
+        Button bt4 = (Button) mView.findViewById(R.id.img_4);
+        bt4.setOnClickListener(this);
+        Button bt5 = (Button) mView.findViewById(R.id.button_moy);
+        bt5.setOnClickListener(this);
+        Button bt6 = (Button) mView.findViewById(R.id.button_ad);
+        bt6.setOnClickListener(this);
+        Button bt7 = (Button) mView.findViewById(R.id.button_hr);
+        bt7.setOnClickListener(this);
+        Button bt8 = (Button) mView.findViewById(R.id.button_pb);
+        bt8.setOnClickListener(this);
+        Button bt9 = (Button) mView.findViewById(R.id.button_mef);
+        bt9.setOnClickListener(this);
+        Button bt10 = (Button) mView.findViewById(R.id.button_re);
+        bt10.setOnClickListener(this);
+        Button bt11 = (Button) mView.findViewById(R.id.button_cl);
+        bt11.setOnClickListener(this);
+        Button bt12 = (Button) mView.findViewById(R.id.button_hp);
+        bt12.setOnClickListener(this);
+        TextView tx1 = (TextView) mView.findViewById(R.id.text02);
+        tx1.setOnClickListener(this);
     }
 
     @Override
@@ -60,11 +84,44 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.img_1:
+                Toast.makeText(mActivity,"新建工作", Toast.LENGTH_SHORT).show();//静态方法makeText创建toast对象
+                break;
+            case R.id.img_2:
+                Toast.makeText(mActivity,"HR系统", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.img_3:
+                Toast.makeText(mActivity,"技术资源", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.img_4:
+                Toast.makeText(mActivity,"培训系统", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.button_moy:
                 Toast.makeText(mActivity,"财务管理", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button_ad:
-                Toast.makeText(mActivity,"行政管理", Toast.LENGTH_SHORT).show();//静态方法makeText创建toast对象
+                Toast.makeText(mActivity,"行政管理", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_hr:
+                Toast.makeText(mActivity,"人事管理", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_pb:
+                Toast.makeText(mActivity,"公共信息", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_mef:
+                Toast.makeText(mActivity,"个人工作台", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_re:
+                Toast.makeText(mActivity,"内部招聘", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_cl:
+                Toast.makeText(mActivity,"文化建设", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button_hp:
+                Toast.makeText(mActivity,"系统帮助", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.text02:
+                startActivity(new Intent(mActivity,shouye_more_1.class));
                 break;
         }
     }

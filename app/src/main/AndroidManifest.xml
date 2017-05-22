@@ -30,7 +30,11 @@
         <activity android:name=".TestActivity"/>
         <activity
             android:name=".document_1"
-            android:screenOrientation="portrait" /> <activity android:name=".AlterPassword" />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".shouye_more_1"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AlterPassword" />
         <activity android:name=".me_paper2"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
