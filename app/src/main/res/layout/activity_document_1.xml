@@ -5,26 +5,67 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.lee.myapplication.document_1">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@color/colorBackgroud"
-        android:id="@+id/RLayout">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="70dp"
-            android:layout_height="match_parent"
-            android:text="文档"
-            android:textSize="32sp"
-            android:textColor="@color/colorMain"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-    </RelativeLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorModule"
+            android:layout_below="@+id/RLayout"
+            android:id="@+id/line">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorMain"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="9dp">
+            <EditText
+                android:id="@+id/image_view_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/search"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="6dp"
+                android:hint="搜索"
+                android:textSize="16sp"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:drawablePadding="12dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="工作在华诺"
+                android:textSize="18dp"
+                android:textColor="@color/colorText"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"/>
+        </LinearLayout>
     <android.support.v7.widget.RecyclerView
     android:id="@+id/recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorMain"
-    android:layout_below="@id/RLayout"/>
+    android:layout_below="@id/line"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorBackgroud"
+        android:id="@+id/RLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="文档"
+            android:textSize="24sp"
+            android:textColor="@color/colorMain"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true">
+        </TextView>
+    </RelativeLayout>
 </RelativeLayout>

@@ -16,7 +16,7 @@
         android:id="@+id/search_image"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:background="@drawable/search"
+        android:background="@mipmap/search"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="11dp" />
     //EdittText全局显示，方便点击输入文字
@@ -34,20 +34,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignBottom="@+id/phone_list"
         android:textColorHint="@color/colorMain"/>
-    <Button
-        android:id="@+id/COM"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/search_text"
-        android:text="Communication-Operation"
-        android:textColor="@color/colorText"
-        android:textSize="12sp"
-        android:drawableLeft="@mipmap/phonelist"
-        android:background="@drawable/phone_select"
-        android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
-        android:paddingLeft="12dp"
-        android:paddingRight="9dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
@@ -65,7 +52,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
         <TextView
@@ -85,7 +73,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
 
@@ -106,7 +95,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
      <TextView
@@ -126,7 +116,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
        <TextView
@@ -147,7 +138,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
     <TextView
@@ -167,7 +159,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
     <TextView
@@ -187,7 +180,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
     <TextView
@@ -207,7 +201,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
 
@@ -228,7 +223,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
     <TextView
@@ -248,7 +244,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
     <TextView
@@ -268,7 +265,8 @@
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"
         android:paddingLeft="12dp"
         android:paddingRight="9dp" />
     <TextView
@@ -277,4 +275,19 @@
         android:id="@+id/textView27"
         android:layout_below="@+id/SISD"
         android:background="#A9A8A8"/>
+    <Button
+        android:id="@+id/COM"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:text="Communication-Operation"
+        android:textColor="@color/colorText"
+        android:textSize="12sp"
+        android:drawableLeft="@mipmap/phonelist"
+        android:background="@drawable/phone_select"
+        android:drawableRight="@mipmap/next"
+        android:paddingLeft="12dp"
+        android:paddingRight="9dp"
+        android:layout_below="@+id/phone_list"
+        android:textAlignment="textStart"
+        android:drawablePadding="16dp"/>
 </RelativeLayout>
