@@ -84,6 +84,7 @@
         android:id="@+id/textView18"
         android:layout_below="@+id/FC"
         android:background="#A9A8A8"/>
+    //实现图片与文字统一为按钮
     <Button
         android:id="@+id/GDC"
         android:layout_width="match_parent"
