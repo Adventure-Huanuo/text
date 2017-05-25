@@ -19,6 +19,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -83,34 +85,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void run() {
                 String use = accountEdit.getText().toString();
                 String pas = passwordEdit.getText().toString();
-                String code;
-
+                String response;
                 try {
                     Map dataMap = new HashMap();
                     dataMap.put("username", use);
                     dataMap.put("Password", pas);
-                    code="1";
-                  //  code = new HttpRequestor().doPost("http://172.16.201.17:8080/HuanuoServer/login", dataMap);
+                    HttpRequestor httpRequestor = new HttpRequestor();
+                    response = httpRequestor.doPost("http://172.16.201.17:8080/HuanuoServer/login", dataMap);
+                    JSONObject json = new JSONObject(response);
+                    String code = json.getString("code");
                    if (code.equals("1")) {
-                        editor=pref.edit();
-                        if(checkBox2.isChecked()){
-                            editor.putBoolean("checkBox2",true);
-                            editor.putString("account",use);
-                            editor.putString("password",pas);
-                        }else {
-                            editor.clear();
-                        }editor.apply();
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
+                       editor=pref.edit();
+                       editor.putString("account",use);
+                       editor.putString("password",pas);
+                       editor.putString("token",json.getString("token"));
+                       if(checkBox2.isChecked()){
+                           editor.putBoolean("checkBox2",true);
+                       }else {
+                           editor.putBoolean("checkBox2",false);
+                           //editor.clear();
+                       }editor.apply();
+                       Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                       startActivity(intent);
+                       finish();
                     } else if (code.equals("-1")) {
-                        Looper.prepare();
-                        Toast.makeText(LoginActivity.this, "密码不正确", Toast.LENGTH_SHORT).show();
-                        Looper.loop();
+                       Looper.prepare();
+                       Toast.makeText(LoginActivity.this, "密码不正确", Toast.LENGTH_SHORT).show();
+                       Looper.loop();
                     } else {
-                        Looper.prepare();
-                        Toast.makeText(LoginActivity.this, "帐号不存在", Toast.LENGTH_SHORT).show();
-                        Looper.loop();
+                       Looper.prepare();
+                       Toast.makeText(LoginActivity.this, "帐号不存在", Toast.LENGTH_SHORT).show();
+                       Looper.loop();
                     }
                 } catch (Exception e) {
                     e.getMessage();
