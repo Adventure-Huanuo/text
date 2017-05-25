@@ -95,10 +95,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     JSONObject json = new JSONObject(response);
                     String code = json.getString("code");
                    if (code.equals("1")) {
+                       Map searchMap = new HashMap();
+                       searchMap.put("sname",use);
+                       searchMap.put("id",use);
+                       searchMap.put("token",json.getString("token"));
+                       JSONObject json_1 = new JSONObject(httpRequestor.doPost("http://172.16.201.17:8080/HuanuoServer/getTel",searchMap));
                        editor=pref.edit();
                        editor.putString("account",use);
                        editor.putString("password",pas);
                        editor.putString("token",json.getString("token"));
+                       editor.putString("iconurl",json_1.getString("iconurl"));
+                       editor.putString("gender",json_1.getString("gender"));
+                       editor.putString("name",json_1.getString("name"));
+                       editor.putString("tel",json_1.getString("tel"));
+                       editor.putString("location",json_1.getString("location"));
+                       editor.putString("id",json_1.getString("id"));
+                       editor.putString("depart",json_1.getString("depart"));
+                       editor.putString("email",json_1.getString("email"));
                        if(checkBox2.isChecked()){
                            editor.putBoolean("checkBox2",true);
                        }else {

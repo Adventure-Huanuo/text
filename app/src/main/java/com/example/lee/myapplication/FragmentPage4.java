@@ -4,18 +4,25 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.DataSetObserver;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Looper;
+import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Handler;
 
 /**
  * Created by lee on 2017/5/14.
@@ -26,6 +33,10 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
     private MainActivity mActivity;
     private View mView;
     ExpandableListView expandableListView;
+    private Handler handler;
+    final static int MESSAGE_SHOW_IMG = 0;
+    final static int MESSAGE_RESULT_ERR = 1;
+    private SharedPreferences pref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +51,24 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
         mView = inflater.inflate(R.layout.fragment_page4, container,
                 false);
         init();
+        pref = PreferenceManager.getDefaultSharedPreferences(mActivity);
+        sendRequestWithHttpURLConnection(pref.getString("iconurl",""));
+        handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                // super.handleMessage(msg);
+                switch (msg.what){
+                    case MESSAGE_SHOW_IMG:
+                        ((ImageView)mActivity.findViewById(R.id.imageView)).setImageBitmap((Bitmap)msg.obj);
+                        break;
+                    case MESSAGE_RESULT_ERR:
+                        Toast.makeText(mActivity,"照片获取失败",Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
         return mView;
     }
 
@@ -219,8 +248,8 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
 
     }
 
-    class GroupViewHolder{
-        TextView tvName;
+        class GroupViewHolder{
+            TextView tvName;
         TextView tvCount;
     }
 
@@ -257,7 +286,9 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imageView:
-                startActivity(new Intent(mActivity,me_paper2.class));
+                Intent intent = new Intent(mActivity,PhoneListdetial.class);
+                intent.putExtra("str",pref.getString("id",""));
+                startActivity(intent);
                 break;
             case R.id.exit:
                 new android.support.v7.app.AlertDialog.Builder(getActivity()).setTitle("提示")
@@ -267,6 +298,7 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 startActivity(new Intent(mActivity,LoginActivity.class));
+                                mActivity.finish();
                             }})
                         .setNegativeButton("取消", null)
                         .create().show();
@@ -274,6 +306,24 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
 
                 break;
         }
+    }
+
+    private void sendRequestWithHttpURLConnection (final String path) {
+        //开启线程来发起网络请求
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    HttpRequestor httpRequestor = new HttpRequestor();
+                    httpRequestor.requestNet(path,handler);
+                } catch (Exception e) {
+                    e.getMessage();
+                    Looper.prepare();
+                    Toast.makeText(mActivity,"请检查网络设置",Toast.LENGTH_SHORT).show();
+                    Looper.loop();
+                }
+            }
+        }).start();
     }
 }
 
