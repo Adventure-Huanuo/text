@@ -1,6 +1,8 @@
 package com.example.lee.myapplication;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by lee on 2017/5/14.
@@ -59,7 +62,7 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
 
         //注意两个数组一样长
         private String[] armTypes = new String[]{
-                "个人信息", "待查信息", "代办工作", "待查工作", "在办工作", "已发工作", "HR代办", "系统设置"
+                "个人信息", "待查信息", "代办工作", "待查工作", "在办工作", "已发工作", "HR代办"
         };
         private String[][] arms = new String[][]{
                 {"姓名：", "工号：", "电话：", "邮箱："},
@@ -67,7 +70,6 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
                 {"ii", "jj", "kk", "ll"},
                 {"mm", "nn", "oo", "pp"},
                 {"qq", "rr", "ss", "tt"},
-                {},
                 {},
                 {}
         };
@@ -229,7 +231,8 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
+        Button bt3 = (Button) mView.findViewById(R.id.exit);
+        bt3.setOnClickListener(this);
         ImageView bt4 = (ImageView) mView.findViewById(R.id.imageView);
         bt4.setOnClickListener(this);
     }
@@ -255,6 +258,20 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.imageView:
                 startActivity(new Intent(mActivity,me_paper2.class));
+                break;
+            case R.id.exit:
+                new android.support.v7.app.AlertDialog.Builder(getActivity()).setTitle("提示")
+                        .setIconAttribute(android.R.attr.alertDialogIcon)
+                        .setMessage("确定要退出登录吗?")
+                        .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(mActivity,LoginActivity.class));
+                            }})
+                        .setNegativeButton("取消", null)
+                        .create().show();
+
+
                 break;
         }
     }
