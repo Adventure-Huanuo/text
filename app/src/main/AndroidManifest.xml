@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lee.myapplication">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -27,7 +28,7 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity android:name=".TestActivity"/>
+        <activity android:name=".TestActivity" />
         <activity
             android:name=".document_1"
             android:screenOrientation="portrait" />
@@ -35,11 +36,21 @@
             android:name=".shouye_more_1"
             android:screenOrientation="portrait" />
         <activity android:name=".AlterPassword" />
-        <activity android:name=".me_paper2"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <activity android:name=".me_paper2" />
+        <!--
+ ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <activity android:name=".PhoneListdetial"/>
+
+        <activity android:name=".PhoneListdetial" />
+        <activity android:name=".ApartmentAdapter" />
+        <activity android:name=".SingleItemScrollView" />
+        <activity android:name=".Bean" />
+        <activity android:name=".ApartmentItem" />
+        <activity android:name=".Apartment" />
     </application>
+
 </manifest>
