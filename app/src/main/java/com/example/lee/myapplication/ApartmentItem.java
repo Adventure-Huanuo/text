@@ -18,9 +18,9 @@ public class ApartmentItem extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.AparListView);
         listView.setAdapter(adapter);
     }
-    private void initApartment(){
-        for (int i=0;i<101;i++){
-            Apartment runan=new Apartment("runan","Radio1","runan.cai@huanuo-nokia.com",19974329933,"sh");
+    private void initApartment() {
+        for (int i = 0; i < 101; i++) {
+            Apartment runan = new Apartment("runan", "Radio1", "runan.cai@huanuo-nokia.com", 19974329933, "sh");
             apartmentList.add(runan);
         }
     }
