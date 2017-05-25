@@ -1,4 +1,12 @@
-package com.example.logintest;
+package com.example.lee.myapplication;
+
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Handler;
+import android.os.Message;
+
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,6 +32,7 @@ public class HttpRequestor {
     private Integer socketTimeout = null;
     private String proxyHost = null;
     private Integer proxyPort = null;
+    private String path;
 
     /**
      * Do GET request
@@ -110,7 +119,7 @@ public class HttpRequestor {
         httpURLConnection.setReadTimeout(3000);
         httpURLConnection.setRequestProperty("Accept-Charset", charset);
         httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-        httpURLConnection.setRequestProperty("Content-Length", String.valueOf(parameterBuffer.length()));
+        //httpURLConnection.setRequestProperty("Content-Length", String.valueOf(parameterBuffer.length()));
 
         OutputStream outputStream = null;
         OutputStreamWriter outputStreamWriter = null;
@@ -153,6 +162,120 @@ public class HttpRequestor {
             }
         }
         return resultBuffer.toString();
+    }
+
+    public void requestNet(String path, Handler handler) {
+        int MESSAGE_SHOW_IMG = 0;
+        int MESSAGE_RESULT_ERR = 1;
+        try {
+            URL url = new URL(path);
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(5000);
+            int code = connection.getResponseCode();
+            if (code == 200){
+                Bitmap bitmap = BitmapFactory.decodeStream(connection.getInputStream());
+                Message message = new Message();
+                message.obj = bitmap;
+                message.what = MESSAGE_SHOW_IMG;
+                handler.sendMessage(message);
+            } else{
+                Message message = new Message();
+                message.what = MESSAGE_RESULT_ERR;
+                handler.sendMessage(message);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Message message = new Message();
+            message.what = MESSAGE_RESULT_ERR;
+            handler.sendMessage(message);
+        }
+    }
+
+    public void doPost_1(String url, Map parameterMap,Handler handler) throws Exception {
+        int MESSAGE_OK = 0;
+        int MESSAGE_ERR = 1;
+        /* Translate parameter map to parameter date string */
+        StringBuffer parameterBuffer = new StringBuffer();
+        if (parameterMap != null) {
+            Iterator iterator = parameterMap.keySet().iterator();
+            String key = null;
+            String value = null;
+            while (iterator.hasNext()) {
+                key = (String)iterator.next();
+                if (parameterMap.get(key) != null) {
+                    value = (String)parameterMap.get(key);
+                } else {
+                    value = "";
+                }
+                parameterBuffer.append(key).append("=").append(value);
+                if (iterator.hasNext()) {
+                    parameterBuffer.append("&");
+                }
+            }
+        }
+        System.out.println("POST parameter : " + parameterBuffer.toString());
+
+        URL localURL = new URL(url);
+        URLConnection connection = openConnection(localURL);
+        HttpURLConnection httpURLConnection = (HttpURLConnection)connection;
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setConnectTimeout(3000);
+        httpURLConnection.setReadTimeout(3000);
+        httpURLConnection.setRequestProperty("Accept-Charset", charset);
+        httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        //httpURLConnection.setRequestProperty("Content-Length", String.valueOf(parameterBuffer.length()));
+
+        OutputStream outputStream = null;
+        OutputStreamWriter outputStreamWriter = null;
+        InputStream inputStream = null;
+        InputStreamReader inputStreamReader = null;
+        BufferedReader reader = null;
+        StringBuffer resultBuffer = new StringBuffer();
+        String tempLine = null;
+        try {
+            outputStream = httpURLConnection.getOutputStream();
+            outputStreamWriter = new OutputStreamWriter(outputStream);
+            outputStreamWriter.write(parameterBuffer.toString());
+            outputStreamWriter.flush();
+
+            if (httpURLConnection.getResponseCode() >= 300) {
+                Message message = new Message();
+                message.what = MESSAGE_ERR;
+                handler.sendMessage(message);
+                throw new Exception("HTTP Request is not success, Response code is " + httpURLConnection.getResponseCode());
+            }
+            inputStream = httpURLConnection.getInputStream();
+            inputStreamReader = new InputStreamReader(inputStream);
+            reader = new BufferedReader(inputStreamReader);
+
+            while ((tempLine = reader.readLine()) != null) {
+                resultBuffer.append(tempLine);
+            }
+        } finally {
+            if (outputStreamWriter != null) {
+                outputStreamWriter.close();
+            }
+            if (outputStream != null) {
+                outputStream.close();
+            }
+            if (reader != null) {
+                reader.close();
+            }
+            if (inputStreamReader != null) {
+                inputStreamReader.close();
+            }
+            if (inputStream != null) {
+                inputStream.close();
+            }
+        }
+        JSONObject jsonObject = new JSONObject(resultBuffer.toString());
+        path = jsonObject.getString("iconurl");
+        Message message = new Message();
+        message.obj = resultBuffer.toString();
+        message.what = MESSAGE_OK;
+        handler.sendMessage(message);
     }
 
     private URLConnection openConnection(URL localURL) throws IOException {
@@ -215,4 +338,8 @@ public class HttpRequestor {
     public void setCharset(String charset) {
         this.charset = charset;
     }
+    public String getPath() {
+        return path;
+    }
+    public void setPath(String path) { this.path = path; }
 }
