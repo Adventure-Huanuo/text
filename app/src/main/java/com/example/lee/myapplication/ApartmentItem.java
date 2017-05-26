@@ -20,7 +20,7 @@ public class ApartmentItem extends AppCompatActivity {
     }
     private void initApartment() {
         for (int i = 0; i < 101; i++) {
-            Apartment runan = new Apartment("runan", "Radio1", "runan.cai@huanuo-nokia.com", 19974329933, "sh");
+            Apartment runan = new Apartment("蔡如男","工程师","Radio1", "runan.cai@huanuo-nokia.com", "18573197193", "sh");
             apartmentList.add(runan);
         }
     }

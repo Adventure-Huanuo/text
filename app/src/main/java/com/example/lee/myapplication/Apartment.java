@@ -7,10 +7,10 @@ public class Apartment  {
     private String item_name;
     private String item_duty;
     private String item_apar;
-    private int    item_number;
+    private String item_number;
     private String item_email;
     private String item_base;
-    public Apartment(String item_name,String item_duty,String item_apar,int item_number,String item_email,String item_base){
+    public Apartment(String item_name,String item_duty,String item_apar,String item_number,String item_email,String item_base){
         this.item_name=item_name;
         this.item_duty=item_duty;
         this.item_apar=item_apar;
@@ -27,8 +27,8 @@ public class Apartment  {
     public String getItem_apar(){
         return  item_apar;
     }
-    public int getItem_number(){
-        return  item_number;
+    public String getItem_number(){
+        return item_number;
     }
     public String getItem_email(){
         return  item_email;
