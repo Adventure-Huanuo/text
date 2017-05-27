@@ -51,7 +51,6 @@
         <activity android:name=".Bean" />
         <activity android:name=".ApartmentItem" />
         <activity android:name=".Apartment" />
-        <activity android:name=".MyInformationEdit" />
     </application>
 
 </manifest>
