@@ -67,13 +67,13 @@ public class MyInformationEdit extends AppCompatActivity {
         textView17.setText(pref.getString("id",""));
         edit.setOnClickListener(new Button.OnClickListener(){//创建监听
             public void onClick(View v) {
-                setEnabled(textView4);
+                //setEnabled(textView4);
                 setEnabled(textView7);
-                setEnabled(textView9);
+                //setEnabled(textView9);
                 setEnabled(textView11);
                 setEnabled(textView13);
                 setEnabled(textView15);
-                setEnabled(textView17);
+                //setEnabled(textView17);
                 confirm.setVisibility(confirm.VISIBLE);
                 cancel.setVisibility(cancel.VISIBLE);
                 edit.setVisibility(cancel.GONE);
@@ -84,12 +84,12 @@ public class MyInformationEdit extends AppCompatActivity {
                 JSONObject object = new JSONObject();
                 try {
                     object.put("gender",textView7.getText().toString());
-                    //object.put("iconurl","");
-                    object.put("name",textView4.getText().toString());
+                    object.put("iconurl","");
+                    object.put("name",pref.getString("name",""));
                     object.put("tel",textView11.getText().toString());
                     object.put("location",textView15.getText().toString());
-                    object.put("id",textView17.getText().toString());
-                    object.put("depart",textView9.getText().toString());
+                    object.put("id",pref.getString("id",""));
+                    object.put("depart",pref.getString("depart",""));
                     object.put("email",textView13.getText().toString());
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -111,20 +111,20 @@ public class MyInformationEdit extends AppCompatActivity {
                                 }
 
                                 if(code.equals("3")) {
-                                    setEdit(textView4,"name");
+                                    //setEdit(textView4,"name");
                                     setEdit(textView7,"gender");
-                                    setEdit(textView9,"depart");
+                                    //setEdit(textView9,"depart");
                                     setEdit(textView11,"tel");
                                     setEdit(textView13,"email");
                                     setEdit(textView15,"location");
-                                    setEdit(textView17,"id");
-                                    setDisabled(textView4);
+                                    //setEdit(textView17,"id");
+                                    //setDisabled(textView4);
                                     setDisabled(textView7);
-                                    setDisabled(textView9);
+                                    //setDisabled(textView9);
                                     setDisabled(textView11);
                                     setDisabled(textView13);
                                     setDisabled(textView15);
-                                    setDisabled(textView17);
+                                    //setDisabled(textView17);
                                     confirm.setVisibility(confirm.INVISIBLE);
                                     cancel.setVisibility(cancel.INVISIBLE);
                                     edit.setVisibility(cancel.VISIBLE);
@@ -136,13 +136,13 @@ public class MyInformationEdit extends AppCompatActivity {
                                     getEdit(textView13,"email");
                                     getEdit(textView15,"location");
                                     getEdit(textView17,"id");
-                                    setDisabled(textView4);
+                                    //setDisabled(textView4);
                                     setDisabled(textView7);
-                                    setDisabled(textView9);
+                                    //setDisabled(textView9);
                                     setDisabled(textView11);
                                     setDisabled(textView13);
                                     setDisabled(textView15);
-                                    setDisabled(textView17);
+                                    //setDisabled(textView17);
                                     confirm.setVisibility(confirm.INVISIBLE);
                                     cancel.setVisibility(cancel.INVISIBLE);
                                     edit.setVisibility(cancel.VISIBLE);
@@ -187,12 +187,14 @@ public class MyInformationEdit extends AppCompatActivity {
         editText.setFocusableInTouchMode(true);
         editText.setFocusable(true);
         editText.requestFocus();
+        editText.setTextColor(0xFF0000FF);
     }
 
     public void setDisabled (EditText editText) {
         editText.setEnabled(false);
         editText.setFocusable(false);
         editText.setFocusableInTouchMode(false);
+        editText.setTextColor(0xFF757575);
     }
     public void setEdit (EditText editText,String par) {
         String str = editText.getText().toString();
