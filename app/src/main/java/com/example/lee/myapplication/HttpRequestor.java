@@ -5,10 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Base64;
 
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,6 +35,7 @@ public class HttpRequestor {
     private String proxyHost = null;
     private Integer proxyPort = null;
     private String path;
+    private String strMap;
 
     /**
      * Do GET request
@@ -164,7 +167,7 @@ public class HttpRequestor {
         return resultBuffer.toString();
     }
 
-    public void requestNet(String path, Handler handler) {
+    public void requestNet(String path,Handler handler) {
         int MESSAGE_SHOW_IMG = 0;
         int MESSAGE_RESULT_ERR = 1;
         try {
@@ -189,6 +192,63 @@ public class HttpRequestor {
             Message message = new Message();
             message.what = MESSAGE_RESULT_ERR;
             handler.sendMessage(message);
+        }
+    }
+
+    public void requestNet_1(String path) {
+        try {
+            URL url = new URL(path);
+            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setConnectTimeout(5000);
+            int code = connection.getResponseCode();
+            if (code == 200){
+                Bitmap bitmap = BitmapFactory.decodeStream(connection.getInputStream());
+                strMap = convertIconToString(bitmap);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 图片转成string
+     *
+     * @param bitmap
+     * @return
+     */
+    public String convertIconToString(Bitmap bitmap)
+    {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();// outputstream
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] appicon = baos.toByteArray();// 转为byte数组
+        return Base64.encodeToString(appicon, Base64.DEFAULT);
+
+    }
+
+    /**
+     * string转成bitmap
+     *
+     * @param str
+     */
+    public Bitmap convertStringToIcon(String str)
+    {
+        // OutputStream out;
+        Bitmap bitmap = null;
+        try
+        {
+            // out = new FileOutputStream("/sdcard/aa.jpg");
+            byte[] bitmapArray;
+            bitmapArray = Base64.decode(str, Base64.DEFAULT);
+            bitmap =
+                    BitmapFactory.decodeByteArray(bitmapArray, 0,
+                            bitmapArray.length);
+            // bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+            return bitmap;
+        }
+        catch (Exception e)
+        {
+            return null;
         }
     }
 
@@ -278,6 +338,90 @@ public class HttpRequestor {
         handler.sendMessage(message);
     }
 
+    public void doPost_2(String url, Map parameterMap,Handler handler) throws Exception {
+        int MESSAGE_OK = 0;
+        int MESSAGE_ERR = 1;
+        /* Translate parameter map to parameter date string */
+        StringBuffer parameterBuffer = new StringBuffer();
+        if (parameterMap != null) {
+            Iterator iterator = parameterMap.keySet().iterator();
+            String key = null;
+            String value = null;
+            while (iterator.hasNext()) {
+                key = (String)iterator.next();
+                if (parameterMap.get(key) != null) {
+                    value = (String)parameterMap.get(key);
+                } else {
+                    value = "";
+                }
+                parameterBuffer.append(key).append("=").append(value);
+                if (iterator.hasNext()) {
+                    parameterBuffer.append("&");
+                }
+            }
+        }
+        System.out.println("POST parameter : " + parameterBuffer.toString());
+
+        URL localURL = new URL(url);
+        URLConnection connection = openConnection(localURL);
+        HttpURLConnection httpURLConnection = (HttpURLConnection)connection;
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setConnectTimeout(3000);
+        httpURLConnection.setReadTimeout(3000);
+        httpURLConnection.setRequestProperty("Accept-Charset", charset);
+        httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+        //httpURLConnection.setRequestProperty("Content-Length", String.valueOf(parameterBuffer.length()));
+
+        OutputStream outputStream = null;
+        OutputStreamWriter outputStreamWriter = null;
+        InputStream inputStream = null;
+        InputStreamReader inputStreamReader = null;
+        BufferedReader reader = null;
+        StringBuffer resultBuffer = new StringBuffer();
+        String tempLine = null;
+        try {
+            outputStream = httpURLConnection.getOutputStream();
+            outputStreamWriter = new OutputStreamWriter(outputStream);
+            outputStreamWriter.write(parameterBuffer.toString());
+            outputStreamWriter.flush();
+
+            if (httpURLConnection.getResponseCode() >= 300) {
+                Message message = new Message();
+                message.what = MESSAGE_ERR;
+                handler.sendMessage(message);
+                throw new Exception("HTTP Request is not success, Response code is " + httpURLConnection.getResponseCode());
+            }
+            inputStream = httpURLConnection.getInputStream();
+            inputStreamReader = new InputStreamReader(inputStream);
+            reader = new BufferedReader(inputStreamReader);
+
+            while ((tempLine = reader.readLine()) != null) {
+                resultBuffer.append(tempLine);
+            }
+        } finally {
+            if (outputStreamWriter != null) {
+                outputStreamWriter.close();
+            }
+            if (outputStream != null) {
+                outputStream.close();
+            }
+            if (reader != null) {
+                reader.close();
+            }
+            if (inputStreamReader != null) {
+                inputStreamReader.close();
+            }
+            if (inputStream != null) {
+                inputStream.close();
+            }
+        }
+        Message message = new Message();
+        message.obj = resultBuffer.toString();
+        message.what = MESSAGE_OK;
+        handler.sendMessage(message);
+    }
+
     private URLConnection openConnection(URL localURL) throws IOException {
         URLConnection connection;
         if (proxyHost != null && proxyPort != null) {
@@ -342,4 +486,8 @@ public class HttpRequestor {
         return path;
     }
     public void setPath(String path) { this.path = path; }
+    public String getStrMap() {
+        return strMap;
+    }
+    public void setStrMap(String strMap) { this.strMap = strMap; }
 }

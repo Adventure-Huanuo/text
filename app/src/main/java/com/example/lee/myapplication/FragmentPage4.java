@@ -1,6 +1,5 @@
 package com.example.lee.myapplication;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,6 +7,7 @@ import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.preference.PreferenceManager;
@@ -16,13 +16,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.os.Handler;
 
 /**
  * Created by lee on 2017/5/14.
@@ -286,9 +284,10 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imageView:
-                Intent intent = new Intent(mActivity,PhoneListdetial.class);
-                intent.putExtra("str",pref.getString("id",""));
+                Intent intent = new Intent(mActivity,MyInformationEdit.class);
+                intent.putExtra("strMap",pref.getString("strMap",""));
                 startActivity(intent);
+                getActivity().overridePendingTransition(R.anim.in_from_right,R.anim.out_to_left);
                 break;
             case R.id.exit:
                 new android.support.v7.app.AlertDialog.Builder(getActivity()).setTitle("提示")
@@ -299,6 +298,7 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
                             public void onClick(DialogInterface dialog, int which) {
                                 startActivity(new Intent(mActivity,LoginActivity.class));
                                 mActivity.finish();
+                                //mActivity.overridePendingTransition(R.anim.out_to_left,0);
                             }})
                         .setNegativeButton("取消", null)
                         .create().show();
