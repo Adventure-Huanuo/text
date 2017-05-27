@@ -46,9 +46,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".PhoneListdetial" />
-
         <activity android:name=".ApartmentItem" />
-
+        <activity android:name=".ApartmentAdapter2"></activity>
     </application>
 
 </manifest>

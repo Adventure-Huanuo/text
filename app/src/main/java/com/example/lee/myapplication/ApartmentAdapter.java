@@ -23,11 +23,13 @@ public class ApartmentAdapter extends ArrayAdapter<Apartment> {
         View view= LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
         TextView itemName=(TextView)view.findViewById(R.id.item_name);
         TextView itemDuty=(TextView)view.findViewById(R.id.item_duty);
+        TextView itemApar=(TextView)view.findViewById(R.id.item_apar) ;
         TextView itemNumber=(TextView)view.findViewById(R.id.item_number);
         TextView itemEmail=(TextView)view.findViewById(R.id.item_email);
         TextView itemBase=(TextView)view.findViewById(R.id.item_base);
         itemName.setText(apartment.getItem_name());
         itemDuty.setText(apartment.getItem_duty());
+        itemApar.setText(apartment.getItem_apar());
         itemNumber.setText(apartment.getItem_number());
         itemEmail.setText(apartment.getItem_email());
         itemBase.setText(apartment.getItem_base());

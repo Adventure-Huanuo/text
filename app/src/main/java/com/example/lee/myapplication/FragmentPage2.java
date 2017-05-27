@@ -62,8 +62,9 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.COM:
-                Toast.makeText(mActivity,"Communication-Operation", Toast.LENGTH_SHORT).show();
-                break;
+                        Intent intent1 = new Intent(mActivity, ApartmentItem.class);
+                        startActivity(intent1);
+                        break;
             case R.id.search_image:
                 Intent intent = new Intent(mActivity,PhoneListdetial.class);
                 String searchText = ((EditText) mView.findViewById(R.id.search_text)).getText().toString();

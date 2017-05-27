@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/item_image"
         android:layout_width="88dp"
         android:layout_height="88dp"
         android:background="@drawable/touxiang"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="8dp" />
 
     <TextView
         android:id="@+id/item_name"
@@ -46,7 +47,7 @@
         android:layout_toRightOf="@+id/item_image"
         android:text="18573197913"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="6dp" />
     <TextView
         android:id="@+id/item_email"
         android:layout_width="wrap_content"
@@ -54,7 +55,7 @@
         android:text="runan.cai@huanuo-nokia.com"
         android:layout_below="@+id/item_number"
         android:layout_toRightOf="@+id/item_image"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:layout_marginLeft="8dp" />
     <TextView
         android:id="@+id/item_base"
@@ -63,6 +64,6 @@
         android:layout_below="@+id/item_email"
         android:layout_toRightOf="@+id/item_image"
         android:text="上海联通"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:layout_marginLeft="8dp" />
 </RelativeLayout>

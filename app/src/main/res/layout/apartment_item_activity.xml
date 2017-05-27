@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.lee.myapplication.ApartmentItem">
 
-    <TextView
+   <TextView
         android:background="@drawable/login_background"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -33,7 +33,7 @@
         android:layout_below="@+id/phonepage"
         android:background="#ffffff"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="6dp" />
+        android:layout_marginLeft="4dp" />
     <ImageView
         android:layout_width="26dp"
         android:layout_height="22dp"
@@ -52,11 +52,10 @@
         android:layout_below="@+id/searchjpg"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp" />
-
-    <ListView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/AparListView"
-        android:layout_below="@+id/apartment_name">
-    </ListView>
-
+ <android.support.v7.widget.RecyclerView
+     android:id="@+id/apart_recyclerview"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_below="@+id/apartment_name"
+     android:layout_marginTop="2dp" />
 </RelativeLayout>
