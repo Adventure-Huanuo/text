@@ -47,9 +47,7 @@
 
         <activity android:name=".PhoneListdetial" />
         <activity android:name=".ApartmentItem" />
-        <activity android:name=".ApartmentItem1" />
         <activity android:name=".MyInformationEdit" />
-        <activity android:name=".PhotoShow" />
     </application>
 
 </manifest>
