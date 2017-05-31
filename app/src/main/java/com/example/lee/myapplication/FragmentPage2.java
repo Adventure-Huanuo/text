@@ -37,8 +37,10 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Button bt2 = (Button) mView.findViewById(R.id.COM);
+        Button bt3 = (Button) mView.findViewById(R.id.RSO);
         ImageView serchImage = (ImageView) mView.findViewById(R.id.search_image);
         bt2.setOnClickListener(this);
+        bt3.setOnClickListener(this);
         serchImage.setOnClickListener(this);
     }
 
@@ -62,9 +64,14 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.COM:
-                        Intent intent1 = new Intent(mActivity, ApartmentItem.class);
-                        startActivity(intent1);
-                        break;
+                Intent intent1 = new Intent(mActivity, ApartmentItem.class);
+                startActivity(intent1);
+                break;
+            case R.id.RSO:
+                Intent intent2 = new Intent(mActivity, ApartmentItem1.class);
+                intent2.putExtra("str","RSO");
+                startActivity(intent2);
+                break;
             case R.id.search_image:
                 Intent intent = new Intent(mActivity,PhoneListdetial.class);
                 String searchText = ((EditText) mView.findViewById(R.id.search_text)).getText().toString();
