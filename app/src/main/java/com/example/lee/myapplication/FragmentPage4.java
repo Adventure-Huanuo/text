@@ -290,7 +290,6 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.imageView:
                 Intent intent = new Intent(mActivity,MyInformationEdit.class);
-                intent.putExtra("strMap",pref.getString("strMap",""));
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.in_from_right,R.anim.out_to_left);
                 break;

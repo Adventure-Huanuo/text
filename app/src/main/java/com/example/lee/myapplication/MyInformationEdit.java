@@ -56,9 +56,8 @@ public class MyInformationEdit extends AppCompatActivity {
         textView13 = (EditText) findViewById(R.id.textView13);
         textView15 = (EditText) findViewById(R.id.textView15);
         textView17 = (EditText) findViewById(R.id.textView17);
-        final Intent intent = getIntent();
         HttpRequestor httpRequestor = new HttpRequestor();
-        Bitmap bitmap = httpRequestor.convertStringToIcon(intent.getStringExtra("strMap"));
+        Bitmap bitmap = httpRequestor.convertStringToIcon(pref.getString("strMap",""));
         ((ImageView)findViewById(R.id.image_head)).setImageBitmap(bitmap);
         textView4.setText(pref.getString("name",""));
         textView7.setText(pref.getString("gender",""));
