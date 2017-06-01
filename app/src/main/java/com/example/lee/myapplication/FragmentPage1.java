@@ -85,10 +85,11 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_1:
-                Toast.makeText(mActivity,"新建工作", Toast.LENGTH_SHORT).show();//静态方法makeText创建toast对象
+                Intent intent1 = new Intent(mActivity, travelapply.class);
+                startActivity(intent1);
                 break;
             case R.id.img_2:
-                Toast.makeText(mActivity,"HR系统", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mActivity,"HR系统", Toast.LENGTH_SHORT).show();//静态方法makeText创建toast对象
                 break;
             case R.id.img_3:
                 Toast.makeText(mActivity,"技术资源", Toast.LENGTH_SHORT).show();
