@@ -11,8 +11,37 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/imageView"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"/>
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:text="蔡如男"
+        android:textColor="#7C7374"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:text="18573197193"
+        android:textColor="#7C7374"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView11"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true"  />
+    <TextView
+        android:text="runan.cai@huanuo-nokia.com"
+        android:textColor="#7C7374"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView13"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/textView11"
+        android:layout_centerHorizontal="true"  />
 
     <ExpandableListView
         android:id="@+id/textView3"
@@ -22,7 +51,7 @@
         android:textSize="12dp"
         android:background="@drawable/phone_select"
         android:drawSelectorOnTop="false"
-        android:layout_below="@+id/imageView" />
+        android:layout_below="@+id/textView13" />
 
     <TextView
         android:layout_width="match_parent"

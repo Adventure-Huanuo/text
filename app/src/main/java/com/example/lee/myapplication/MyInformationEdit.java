@@ -27,7 +27,6 @@ public class MyInformationEdit extends AppCompatActivity {
     private Button confirm;
     private Button cancel;
     private Button exit;
-    private ImageButton imageView2;
     private EditText textView4;
     private EditText textView7;
     private EditText textView9;
@@ -49,7 +48,6 @@ public class MyInformationEdit extends AppCompatActivity {
         confirm = (Button) findViewById(R.id.confirm);
         cancel = (Button) findViewById(R.id.cancel);
         exit = (Button) findViewById(R.id.exit);
-        imageView2 = (ImageButton) findViewById(R.id.imageView2);
 
         textView4 = (EditText) findViewById(R.id.textView4);
         textView7 = (EditText) findViewById(R.id.textView7);
@@ -192,7 +190,7 @@ public class MyInformationEdit extends AppCompatActivity {
         editText.setFocusableInTouchMode(true);
         editText.setFocusable(true);
         editText.requestFocus();
-        editText.setTextColor(0xFF0000FF);
+        editText.setTextColor(0xFF0277BD);
     }
 
     public void setDisabled (EditText editText) {

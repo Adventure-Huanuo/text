@@ -50,6 +50,7 @@
         <activity android:name=".MyInformationEdit" />
         <activity android:name=".ApartmentItem1" />
         <activity android:name=".travelapply" />
+        <activity android:name=".PhotoShow" />
     </application>
 
 </manifest>

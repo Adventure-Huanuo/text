@@ -72,12 +72,11 @@
             android:layout_width="match_parent"
             android:layout_height="0.05dp"
             android:background="#A9A8A8"
-            android:layout_marginTop="30dp"
-            />
+            android:layout_marginTop="30dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="报销及差旅制度"
+            android:text="差旅机票流程变更说明及QA"
             android:textColor="@color/colorText"
             android:layout_below="@+id/button"
             android:layout_marginTop="12dp"
@@ -87,7 +86,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="华诺邮箱群组"
+            android:text="滴滴出行企业版使用说明"
             android:textColor="@color/colorText"
             android:layout_below="@+id/textView_1"
             android:layout_marginTop="12dp"
@@ -155,7 +154,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="公司学习平台登陆说明"
+            android:text="华诺PM人员技能发展模型"
             android:textColor="@color/colorText"
             android:layout_below="@+id/button_1"
             android:layout_marginTop="12dp"

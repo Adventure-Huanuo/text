@@ -89,16 +89,15 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
 
         //注意两个数组一样长
         private String[] armTypes = new String[]{
-                "个人信息", "待查信息", "代办工作", "待查工作", "在办工作", "已发工作", "HR代办"
+                "待查信息", "代办工作", "待查工作", "在办工作", "已发工作", "HR代办"
         };
         private String[][] arms = new String[][]{
-                {"姓名：", "工号：", "电话：", "邮箱："},
-                {"ee", "ff", "gg", "hh"},
-                {"ii", "jj", "kk", "ll"},
-                {"mm", "nn", "oo", "pp"},
-                {"qq", "rr", "ss", "tt"},
-                {},
-                {}
+                {"", "", "", ""},
+                {"", "", "", ""},
+                {"", "", "", ""},
+                {"", "", "", ""},
+                {"", "", "", ""},
+                {"", "", "", ""}
         };
 
         @Override

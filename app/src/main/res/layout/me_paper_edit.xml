@@ -10,15 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.lee.myapplication.MyInformationEdit">
 
-    <ImageButton
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/imageView2"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"/>
-
     <TextView
         android:text="姓名"
         android:textColor="#7C7374"

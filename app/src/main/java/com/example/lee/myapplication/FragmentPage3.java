@@ -40,6 +40,14 @@ public class FragmentPage3 extends Fragment implements View.OnClickListener {
         bt3.setOnClickListener(this);
         TextView bt4 = (TextView) mView.findViewById(R.id.text01);
         bt4.setOnClickListener(this);
+        TextView bt5 = (TextView) mView.findViewById(R.id.textView_1);
+        bt5.setOnClickListener(this);
+        TextView bt6 = (TextView) mView.findViewById(R.id.textView_2);
+        bt6.setOnClickListener(this);
+        TextView bt7 = (TextView) mView.findViewById(R.id.textView1);
+        bt7.setOnClickListener(this);
+        TextView bt8 = (TextView) mView.findViewById(R.id.textView01);
+        bt8.setOnClickListener(this);
     }
 
     @Override
@@ -67,6 +75,41 @@ public class FragmentPage3 extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.text01:
                 Toast.makeText(mActivity,"文档", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        switch (v.getId()) {
+            case R.id.textView_1:
+                Intent intent = new Intent(mActivity,PhotoShow.class);
+                intent.putExtra("url","http://172.16.201.17:8080/img/docs/business2.png");
+                startActivity(intent);
+                break;
+        }
+        switch (v.getId()) {
+            case R.id.textView_1:
+                Intent intent = new Intent(mActivity,PhotoShow.class);
+                intent.putExtra("url","http://172.16.201.17:8080/img/docs/business2.png");
+                startActivity(intent);
+                break;
+        }
+        switch (v.getId()) {
+            case R.id.textView_2:
+                Intent intent = new Intent(mActivity,PhotoShow.class);
+                intent.putExtra("url","http://172.16.201.17:8080/img/docs/didi.png");
+                startActivity(intent);
+                break;
+        }
+        switch (v.getId()) {
+            case R.id.textView1:
+                Intent intent = new Intent(mActivity,PhotoShow.class);
+                intent.putExtra("url","http://172.16.201.17:8080/img/docs/PM1.jpg");
+                startActivity(intent);
+                break;
+        }
+        switch (v.getId()) {
+            case R.id.textView01:
+                Intent intent = new Intent(mActivity,PhotoShow.class);
+                intent.putExtra("url","http://172.16.201.17:8080/img/docs/lovefund.png");
+                startActivity(intent);
                 break;
         }
     }
