@@ -49,24 +49,6 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
         mView = inflater.inflate(R.layout.fragment_page4, container,
                 false);
         init();
-        pref = PreferenceManager.getDefaultSharedPreferences(mActivity);
-        sendRequestWithHttpURLConnection(pref.getString("iconurl",""));
-        handler = new Handler(){
-            @Override
-            public void handleMessage(Message msg) {
-                // super.handleMessage(msg);
-                switch (msg.what){
-                    case MESSAGE_SHOW_IMG:
-                        ((ImageView)mActivity.findViewById(R.id.imageView)).setImageBitmap((Bitmap)msg.obj);
-                        break;
-                    case MESSAGE_RESULT_ERR:
-                        Toast.makeText(mActivity,"照片获取失败",Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        break;
-                }
-            }
-        };
         return mView;
     }
 
@@ -261,6 +243,30 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
         bt3.setOnClickListener(this);
         ImageView bt4 = (ImageView) mView.findViewById(R.id.imageView);
         bt4.setOnClickListener(this);
+        pref = PreferenceManager.getDefaultSharedPreferences(mActivity);
+        sendRequestWithHttpURLConnection(pref.getString("iconurl",""));
+        handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                // super.handleMessage(msg);
+                switch (msg.what){
+                    case MESSAGE_SHOW_IMG:
+                        ((ImageView)mActivity.findViewById(R.id.imageView)).setImageBitmap((Bitmap)msg.obj);
+                        break;
+                    case MESSAGE_RESULT_ERR:
+                        Toast.makeText(mActivity,"照片获取失败",Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        };
+        TextView name = (TextView) mView.findViewById(R.id.textView4);
+        name.setText(pref.getString("name",""));
+        TextView tel = (TextView) mView.findViewById(R.id.textView11);
+        tel.setText(pref.getString("tel",""));
+        TextView email = (TextView) mView.findViewById(R.id.textView13);
+        email.setText(pref.getString("email",""));
     }
 
     @Override
