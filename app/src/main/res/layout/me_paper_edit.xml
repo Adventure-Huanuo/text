@@ -163,15 +163,21 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="编辑"/>
+        android:background="@drawable/corner"
+        android:text="编辑"
+        android:textColor="@color/colorText"
+        android:textSize="16dp"/>
     <Button
         android:id="@+id/confirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:background="@drawable/corner"
         android:visibility="gone"
-        android:text="确定"/>
+        android:textSize="16dp"
+        android:text="确定"
+        android:textColor="@color/colorText"/>
     <Button
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
@@ -179,6 +185,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:visibility="gone"
-        android:text="取消"/>
+        android:text="取消"
+        android:textColor="@color/colorText"
+        android:background="@drawable/corner"
+        android:textSize="16dp"/>
 
 </RelativeLayout>
