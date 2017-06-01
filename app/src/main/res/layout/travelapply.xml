@@ -275,12 +275,40 @@
                 android:layout_below="@+id/textView18"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
+            <Button
+                android:id="@+id/save"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="保存"
+                android:textSize="22dp"
+                android:textColor="#FFFFFF"
+                android:textAlignment="center"
+                android:background="@drawable/login_background"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/textView18"
+                android:layout_marginLeft="20dp"/>
+
+            <Button
+                android:id="@+id/apply"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:text="提交"
+                android:textSize="22dp"
+                android:textColor="#FFFFFF"
+                android:textAlignment="center"
+                android:background="@drawable/login_background"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/textView18"
+                android:layout_marginLeft="200dp"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/colorModule"
                 android:layout_marginTop="12dp"
-                android:layout_below="@+id/textView18"
+                android:layout_below="@+id/save"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"/>
         </RelativeLayout>
