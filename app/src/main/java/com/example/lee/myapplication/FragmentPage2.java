@@ -63,10 +63,10 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.COM:
+            /*case R.id.COM:
                 Intent intent1 = new Intent(mActivity, ApartmentItem.class);
                 startActivity(intent1);
-                break;
+                break;*/
             case R.id.RSO:
                 Intent intent2 = new Intent(mActivity, ApartmentItem1.class);
                 intent2.putExtra("str","RSO");
