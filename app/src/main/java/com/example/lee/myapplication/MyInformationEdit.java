@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class MyInformationEdit extends AppCompatActivity {
     private Button confirm;
     private Button cancel;
     private Button exit;
+    private ImageButton imageView2;
     private EditText textView4;
     private EditText textView7;
     private EditText textView9;
@@ -47,6 +49,8 @@ public class MyInformationEdit extends AppCompatActivity {
         confirm = (Button) findViewById(R.id.confirm);
         cancel = (Button) findViewById(R.id.cancel);
         exit = (Button) findViewById(R.id.exit);
+        imageView2 = (ImageButton) findViewById(R.id.imageView2);
+
         textView4 = (EditText) findViewById(R.id.textView4);
         textView7 = (EditText) findViewById(R.id.textView7);
         textView9 = (EditText) findViewById(R.id.textView9);
@@ -79,6 +83,7 @@ public class MyInformationEdit extends AppCompatActivity {
                 edit.setVisibility(cancel.GONE);
             }
         });
+
         confirm.setOnClickListener(new Button.OnClickListener(){//创建监听
             public void onClick(View v) {
                 JSONObject object = new JSONObject();
