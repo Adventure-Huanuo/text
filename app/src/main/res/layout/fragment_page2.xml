@@ -14,8 +14,8 @@
         android:gravity="center"/>
     <ImageView
         android:id="@+id/search_image"
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:background="@mipmap/search"
         android:layout_marginLeft="12dp"
         android:layout_marginTop="11dp" />

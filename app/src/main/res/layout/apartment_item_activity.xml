@@ -15,43 +15,48 @@
         android:textSize="20dp"
         android:gravity="center"
         android:id="@+id/phonepage"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:background="#cee7e6"
-        android:id="@+id/search_detail"
-        android:layout_below="@+id/phonepage" />
-
-    <EditText
-        android:id="@+id/search_frame"
-        android:layout_width="match_parent"
-        android:layout_height="34dp"
-        android:layout_below="@+id/phonepage"
-        android:drawableStart="@mipmap/search"
-        android:paddingLeft="15dp"
-        android:hint="搜索"
-        android:drawablePadding="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="15dp"
-        android:background="#ffffff"
-        android:imeOptions="actionSearch"
-        android:lines="1"/>
-
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="RSO"
-        android:textSize="20dp"
-        android:textAlignment="center"
-        android:textColor="#969495"
-        android:id="@+id/apartment_name"
-        android:layout_below="@+id/search_frame"
-        android:layout_marginTop="10dp" />
- <android.support.v7.widget.RecyclerView
+        android:background="@color/colorModule"
+        android:layout_below="@+id/phonepage"
+        android:id="@+id/line">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorMain"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="9dp">
+            <EditText
+                android:id="@+id/search_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/search"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="6dp"
+                android:hint="搜索"
+                android:textSize="16sp"
+                android:background="@null"
+                android:textCursorDrawable="@null"
+                android:drawablePadding="12dp"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RSO"
+            android:textSize="18dp"
+            android:textColor="#969495"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
      android:id="@+id/apart_recyclerview"
      android:layout_width="match_parent"
      android:layout_height="match_parent"
-     android:layout_below="@+id/apartment_name"
+     android:layout_below="@+id/line"
      android:layout_marginTop="10dp" />
+
 </RelativeLayout>

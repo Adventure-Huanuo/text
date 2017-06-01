@@ -12,14 +12,15 @@
 
         <TextView
             android:id="@+id/shouyemore1"
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="新闻中心"
-            android:textSize="30dp"
+            android:textSize="24sp"
             android:textAlignment="center"
             android:textColor="@color/colorMain"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"/>
     </RelativeLayout>
 
 </RelativeLayout>
