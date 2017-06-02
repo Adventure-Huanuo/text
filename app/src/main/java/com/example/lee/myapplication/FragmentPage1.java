@@ -24,6 +24,7 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = (MainActivity) getActivity();
+
     }
 
     @Override

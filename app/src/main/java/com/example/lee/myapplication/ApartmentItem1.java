@@ -10,6 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,6 +30,7 @@ public class ApartmentItem1 extends AppCompatActivity {
     final static int MESSAGE_ERR = 1;
     Handler handler;
     private List<Apartment1> apartmentList=new ArrayList<>();
+    private EditText searchET;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +80,26 @@ public class ApartmentItem1 extends AppCompatActivity {
                 }
             }
         };
+        searchET = (EditText) findViewById(R.id.search_frame);//找到控件
+        searchET.setOnKeyListener(new android.view.View.OnKeyListener() {
+
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // TODO Auto-generated method stub
+                // 修改回车键功能
+                if (keyCode == KeyEvent.KEYCODE_ENTER  && event.getAction() == KeyEvent.ACTION_DOWN ) {
+                    // 先隐藏键盘
+                    ((InputMethodManager) getSystemService(INPUT_METHOD_SERVICE))
+                            .hideSoftInputFromWindow(ApartmentItem1.this
+                                            .getCurrentFocus().getWindowToken(),
+                                    InputMethodManager.HIDE_NOT_ALWAYS);
+                    //接下来在这里做你自己想要做的事，实现自己的业务。
+                    search();
+                }
+
+                return false;
+            }
+        });
     }
 
     private void initApartment(int count,JSONObject json) {
@@ -108,5 +134,16 @@ public class ApartmentItem1 extends AppCompatActivity {
                 }
             }
         }).start();
+    }
+    // 搜索功能
+    private void search() {
+
+        String searchContext = searchET.getText().toString().trim();
+        if (TextUtils.isEmpty(searchContext)) {
+            Toast.makeText(ApartmentItem1.this, "搜索框为空，请输入", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(ApartmentItem1.this,me_paper2.class);
+            startActivity(intent);
+        }
     }
 }
