@@ -43,7 +43,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/colorText"
+                android:background="@color/colorText1"
                 android:layout_marginTop="12dp"
                 android:layout_below="@+id/textView2"
                 android:layout_alignParentLeft="true"
@@ -88,7 +88,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/colorText"
+                android:background="@color/colorText1"
                 android:layout_marginTop="12dp"
                 android:layout_below="@+id/textView5"
                 android:layout_alignParentLeft="true"
@@ -115,7 +115,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/colorText"
+                android:background="@color/colorText1"
                 android:layout_marginTop="12dp"
                 android:layout_below="@+id/textView8"
                 android:layout_alignParentLeft="true"
@@ -147,12 +147,12 @@
                 android:id="@+id/textView11"
                 android:layout_marginTop="152dp"
                 android:layout_marginLeft="70dp"
-                android:enabled="false"
-                android:focusable="false"/>
+                android:enabled="true"
+                android:focusable="true"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/colorText"
+                android:background="@color/colorText1"
                 android:layout_marginTop="12dp"
                 android:layout_below="@+id/textView11"
                 android:layout_alignParentLeft="true"
@@ -175,12 +175,13 @@
                 android:id="@+id/textView13"
                 android:layout_marginTop="242dp"
                 android:layout_marginLeft="70dp"
-                android:enabled="false"
-                android:focusable="false"/>
+                android:enabled="true"
+                android:focusable="true"
+                android:textCursorDrawable="@null" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/colorText"
+                android:background="@color/colorText1"
                 android:layout_marginTop="12dp"
                 android:layout_below="@+id/textView13"
                 android:layout_alignParentLeft="true"
@@ -234,7 +235,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/colorText"
+                android:background="@color/colorText1"
                 android:layout_marginTop="12dp"
                 android:layout_below="@+id/textView16"
                 android:layout_alignParentLeft="true"
@@ -252,7 +253,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/colorText"
+                android:background="@color/colorText1"
                 android:layout_marginTop="12dp"
                 android:layout_below="@+id/textView17"
                 android:layout_alignParentLeft="true"
@@ -270,7 +271,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
-                android:background="@color/colorText"
+                android:background="@color/colorText1"
                 android:layout_marginTop="12dp"
                 android:layout_below="@+id/textView18"
                 android:layout_alignParentLeft="true"
@@ -281,11 +282,11 @@
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:text="保存"
-                android:textSize="22dp"
+                android:textSize="18dp"
                 android:textColor="#FFFFFF"
                 android:textAlignment="center"
                 android:background="@drawable/login_background"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="32dp"
                 android:layout_below="@+id/textView18"
                 android:layout_marginLeft="20dp"/>
 
@@ -295,22 +296,14 @@
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:text="提交"
-                android:textSize="22dp"
+                android:textSize="18dp"
                 android:textColor="#FFFFFF"
                 android:textAlignment="center"
                 android:background="@drawable/login_background"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="32dp"
                 android:layout_below="@+id/textView18"
                 android:layout_marginLeft="200dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/colorModule"
-                android:layout_marginTop="12dp"
-                android:layout_below="@+id/save"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"/>
         </RelativeLayout>
     </LinearLayout>
 

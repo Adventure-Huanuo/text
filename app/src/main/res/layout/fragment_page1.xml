@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -28,7 +29,8 @@
                 android:textSize="12sp"
                 android:background="@null"
                 android:textCursorDrawable="@null"
-                android:drawablePadding="12dp"/>
+                android:drawablePadding="12dp"
+                android:textColor="@color/colorText1"/>
         </LinearLayout>
         <ImageView
             android:id="@+id/image_view_6"
@@ -104,11 +106,11 @@
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="430dp"
+        android:layout_height="match_parent"
         android:layout_below='@id/frame_1'>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="430dp"
+            android:layout_height="450dp"
             android:background="@color/colorMain">
             //用权重实现按钮位置的平均分配
             <LinearLayout
@@ -425,12 +427,13 @@
                 android:layout_alignLeft="@id/text_1a"
                 android:layout_marginTop="12dp"/>
             <TextView
-                android:layout_width="48dp"
+                android:layout_width="60dp"
                 android:layout_height="0.5dp"
                 android:background="@color/colorBackgroud"
                 android:layout_below="@+id/text_aa"
                 android:id="@+id/text_aaa"
-                android:layout_alignLeft="@id/text_1a"/>
+                android:layout_alignLeft="@id/text_1a"
+                android:layout_marginTop='-5dp'/>
             <TextView
                 android:id="@+id/text_bb"
                 android:layout_width="wrap_content"
@@ -445,13 +448,14 @@
             <TextView
                 android:id="@+id/text_cc"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:text="刘丽 801286 Radio-EN6 li.liu@huanuo-nokia.com"
                 android:textColor="@color/colorText"
                 android:textSize="12sp"
                 android:textStyle="normal"
                 android:layout_below="@id/text_aaa"
-                android:layout_alignLeft="@id/text_1a"/>
+                android:layout_alignLeft="@id/text_1a"
+                android:layout_marginTop='9dp'/>
             <TextView
                 android:id="@+id/text_dd"
                 android:layout_width="wrap_content"
@@ -461,7 +465,8 @@
                 android:textSize="12sp"
                 android:textStyle="normal"
                 android:layout_below="@id/text_cc"
-                android:layout_alignLeft="@id/text_1a"/>
+                android:layout_alignLeft="@id/text_1a"
+                android:layout_marginTop='6dp'/>
             <TextView
                 android:id="@+id/text_ee"
                 android:layout_width="wrap_content"
@@ -471,7 +476,8 @@
                 android:textSize="12sp"
                 android:textStyle="normal"
                 android:layout_below="@id/text_dd"
-                android:layout_alignLeft="@id/text_1a"/>
+                android:layout_alignLeft="@id/text_1a"
+                android:layout_marginTop='5dp'/>
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="12dp"

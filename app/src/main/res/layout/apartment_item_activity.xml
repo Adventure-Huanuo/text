@@ -41,6 +41,7 @@
                 android:background="@null"
                 android:textCursorDrawable="@null"
                 android:drawablePadding="12dp"
+                android:textColor="@color/colorText1"
                 android:singleLine="true"/>
         </LinearLayout>
         <TextView
@@ -49,15 +50,17 @@
             android:text="RSO"
             android:textSize="18dp"
             android:textColor="#969495"
-            android:layout_marginLeft="18dp"
+            android:layout_marginLeft="12dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"/>
     </LinearLayout>
     <android.support.v7.widget.RecyclerView
-     android:id="@+id/apart_recyclerview"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     android:layout_below="@+id/line"
-     android:layout_marginTop="10dp" />
+        android:id="@+id/apart_recyclerview"
+        android:layout_marginLeft="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="10dp"
+        />
 
 </RelativeLayout>

@@ -189,7 +189,7 @@ public class MyInformationEdit extends AppCompatActivity {
         editText.setFocusableInTouchMode(true);
         editText.setFocusable(true);
         editText.requestFocus();
-        editText.setTextColor(0xFF0277BD);
+        editText.setTextColor(0xFF036EBC);
     }
 
     public void setDisabled (EditText editText) {
