@@ -85,13 +85,6 @@ public class FragmentPage3 extends Fragment implements View.OnClickListener {
                 break;
         }
         switch (v.getId()) {
-            case R.id.textView_1:
-                Intent intent = new Intent(mActivity,PhotoShow.class);
-                intent.putExtra("url","http://172.16.201.17:8080/img/docs/business2.png");
-                startActivity(intent);
-                break;
-        }
-        switch (v.getId()) {
             case R.id.textView_2:
                 Intent intent = new Intent(mActivity,PhotoShow.class);
                 intent.putExtra("url","http://172.16.201.17:8080/img/docs/didi.png");
