@@ -30,6 +30,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText accountEdit;
     private EditText passwordEdit;
     private Button login;
+    private TextView vpn;
     private CheckBox checkBox1;
     private CheckBox checkBox2;
     private TextView responseText;
@@ -42,11 +43,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         accountEdit=(EditText)findViewById(R.id.account);
         passwordEdit=(EditText)findViewById(R.id.password);
         login=(Button) findViewById(R.id.login);
+        vpn=(TextView) findViewById(R.id.VPN);
         responseText = (TextView) findViewById(R.id.response_text);
         login.setOnClickListener(this);
-        checkBox1=(CheckBox) findViewById(R.id.checkBox1);
-        checkBox2=(CheckBox) findViewById(R.id.checkBox2);
-        login.setOnClickListener(this);
+        vpn.setOnClickListener(this);
         checkBox1=(CheckBox) findViewById(R.id.checkBox1);
         checkBox2=(CheckBox) findViewById(R.id.checkBox2);
         boolean isRemember=pref.getBoolean("checkBox2",false);
@@ -75,6 +75,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void  onClick(View v) {
         if (v.getId() == R.id.login){
             sendRequestWithHttpURLConnection();
+        }
+        if (v.getId() == R.id.VPN){
+            Intent intent = new Intent(LoginActivity.this, PDFViewActivity.class);
+            startActivity(intent);
         }
     }
 

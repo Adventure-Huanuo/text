@@ -51,6 +51,7 @@
         <activity android:name=".ApartmentItem1" />
         <activity android:name=".travelapply" />
         <activity android:name=".PhotoShow" />
+        <activity android:name=".PDFViewActivity" />
     </application>
 
 </manifest>

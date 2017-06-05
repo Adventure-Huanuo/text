@@ -112,6 +112,19 @@
         android:layout_below="@+id/login"
         android:layout_alignEnd="@+id/checkBox1" />
 
+    <TextView
+        android:id="@+id/VPN"
+        android:text="VPN连接说明"
+        android:textSize="15.5dp"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoText="false"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="13dp"
+        android:layout_below="@+id/login"
+        android:layout_alignEnd="@+id/checkBox1" />
+
     <ImageView
         android:id="@+id/huanuo_logo"
         android:layout_width="wrap_content"
