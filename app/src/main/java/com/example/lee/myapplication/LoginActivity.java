@@ -44,6 +44,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         passwordEdit=(EditText)findViewById(R.id.password);
         login=(Button) findViewById(R.id.login);
         vpn=(TextView) findViewById(R.id.VPN);
+        /**
+         * 强制使account的Edittext获得焦点
+         * By:松鼠桂鱼
+         */
+        EditText account_force = (EditText)findViewById(R.id.account);
+        account_force.setFocusable(true);
+        account_force.setFocusableInTouchMode(true);
+        account_force.requestFocus();
+        //
         responseText = (TextView) findViewById(R.id.response_text);
         login.setOnClickListener(this);
         vpn.setOnClickListener(this);
