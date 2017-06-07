@@ -20,14 +20,14 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         mFragmentList = fragmentList;
     }
 
-    @Override
+    @Override//返回当前fragment的位置，那么根据返回的位置，我们设置为对应的fragment，再返回即可
     public
     Fragment getItem(int position)
     {
         return mFragmentList.get(position);
     }
 
-    @Override
+    @Override//表示fragment的个数
     public int getCount() {
 
         return mFragmentList.size();

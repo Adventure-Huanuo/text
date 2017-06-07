@@ -38,6 +38,7 @@
         android:id="@+id/textView16"
         android:layout_marginTop="257dp"
         android:layout_alignParentLeft="true"/>
+    //信息填充
     <EditText
         android:textColor="#7C7374"
         android:textSize="12dp"
@@ -171,7 +172,7 @@
        android:textColor="@color/colorText"
        android:textSize="16dp"/>
 
-
+//隐藏掉
     <Button
         android:id="@+id/confirm"
         android:layout_width="wrap_content"

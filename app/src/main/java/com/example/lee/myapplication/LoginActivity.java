@@ -112,10 +112,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                        searchMap.put("sname",use);
                        searchMap.put("id",use);
                        searchMap.put("token",json.getString("token"));
-                       JSONObject json_1 = new JSONObject(httpRequestor.doPost("http://172.16.201.17:8080/HuanuoServer/getTel",searchMap));
+                       JSONObject json_1 = new JSONObject(httpRequestor.doPost("http://172.16.201.17:8080/HuanuoServer/getTel",searchMap));//发给通信录封装自己的信息
                        httpRequestor.requestNet_1(json_1.getString("iconurl"));
                        editor=pref.edit();
-                       editor.putString("account",use);
+                       editor.putString("account",use);//存储操作，储存在本地
                        editor.putString("password",pas);
                        editor.putString("token",json.getString("token"));
                        editor.putString("iconurl",json_1.getString("iconurl"));

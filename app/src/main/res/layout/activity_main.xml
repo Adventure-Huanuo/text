@@ -18,8 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="4"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+        //采用权重实现按钮平均占用底部区域
         <RadioButton
             android:layout_margin="3dp"
             android:id="@+id/rb1"
