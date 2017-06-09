@@ -60,12 +60,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         checkBox2=(CheckBox) findViewById(R.id.checkBox2);
         boolean isRemember=pref.getBoolean("checkBox2",false);
         if (isRemember){
-            String account =pref.getString("account","");
-            String password =pref.getString("password","");
-            accountEdit.setText(account);
-            passwordEdit.setText(password);
-            checkBox2.setChecked(true);
-
+            try{
+                DesUtils desUtils =new DesUtils("leemenz");
+                String account =pref.getString("account","");
+                String password =desUtils.decrypt(pref.getString("password",""));
+                accountEdit.setText(account);
+                passwordEdit.setText(password);
+                checkBox2.setChecked(true);
+            } catch (Exception e) {
+                e.getMessage();
+            }
         }
         checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -100,9 +104,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String pas = passwordEdit.getText().toString();
                 String response;
                 try {
+                    DesUtils desUtils = new DesUtils("leemenz");
+                    String pass = desUtils.encrypt(pas);
                     Map dataMap = new HashMap();
                     dataMap.put("username", use);
-                    dataMap.put("Password", pas);
+                    dataMap.put("Password",pass);
                     HttpRequestor httpRequestor = new HttpRequestor();
                     response = httpRequestor.doPost("http://172.16.201.17:8080/HuanuoServer/login", dataMap);
                     JSONObject json = new JSONObject(response);
@@ -116,7 +122,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                        httpRequestor.requestNet_1(json_1.getString("iconurl"));
                        editor=pref.edit();
                        editor.putString("account",use);
-                       editor.putString("password",pas);
+                       editor.putString("password",pass);
                        editor.putString("token",json.getString("token"));
                        editor.putString("iconurl",json_1.getString("iconurl"));
                        editor.putString("strMap",httpRequestor.getStrMap());
