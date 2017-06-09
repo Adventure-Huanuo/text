@@ -300,7 +300,7 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 startActivity(new Intent(mActivity,LoginActivity.class));
-                                mActivity.finish();
+                                mActivity.finish();//活动注销
                                 //mActivity.overridePendingTransition(R.anim.out_to_left,0);
                             }})
                         .setNegativeButton("取消", null)

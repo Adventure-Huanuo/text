@@ -14,11 +14,11 @@
         android:gravity="center"/>
     <ImageView
         android:id="@+id/search_image"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@mipmap/search"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="11dp" />
+        android:layout_marginTop="16dp" />
     //EdittText全局显示，方便点击输入文字
     <EditText
         android:id="@+id/search_text"
@@ -35,18 +35,38 @@
         android:layout_alignParentTop="true"
         android:layout_alignBottom="@+id/phone_list"
         android:textColorHint="@color/colorMain"/>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:id="@id/line"
+        android:layout_below="@+id/search_text">
+        <Button
+            android:id="@+id/COM"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Communication-Operation"
+            android:textColor="@color/colorText1"
+            android:textSize="12sp"
+            android:drawableLeft="@mipmap/phonelist"
+            android:background="@drawable/phone_select"
+            android:drawableRight="@mipmap/next"
+            android:paddingLeft="12dp"
+            android:paddingRight="9dp"
+            android:textAlignment="textStart"
+            android:drawablePadding="16dp"
+            android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView16"
-        android:layout_below="@+id/COM"
         android:background="#A9A8A8" />
     <Button
         android:id="@+id/EPC"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/COM"
+        android:layout_height="wrap_content"
         android:text="Project Management"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -56,18 +76,17 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
         <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView17"
-        android:layout_below="@+id/EPC"
         android:background="#A9A8A8"/>
     <Button
         android:id="@+id/FC"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/EPC"
+        android:layout_height="wrap_content"
         android:text="EPC-Product Support"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -77,20 +96,19 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView18"
-        android:layout_below="@+id/FC"
         android:background="#A9A8A8"/>
     //实现图片与文字统一为按钮
     <Button
         android:id="@+id/GDC"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/FC"
+        android:layout_height="wrap_content"
         android:text="Human-Resource"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -100,18 +118,17 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
      <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView19"
-        android:layout_below="@+id/GDC"
          android:background="#A9A8A8"/>
     <Button
         android:id="@+id/GM"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/GDC"
+        android:layout_height="wrap_content"
         android:text="Finance-Control"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -121,19 +138,18 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
        <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView20"
-        android:layout_below="@+id/GM"
            android:background="#A9A8A8"/>
     //实现点击变颜色
     <Button
         android:id="@+id/HR"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/GM"
+        android:layout_height="wrap_content"
         android:text="GM-Office"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -143,18 +159,17 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView21"
-        android:layout_below="@+id/HR"
         android:background="#A9A8A8"/>
     <Button
         android:id="@+id/Nokia"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/HR"
+        android:layout_height="wrap_content"
         android:text="NM_SON"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -164,18 +179,17 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView22"
-        android:layout_below="@+id/Nokia"
         android:background="#A9A8A8"/>
     <Button
         android:id="@+id/NM_SON"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/Nokia"
+        android:layout_height="wrap_content"
         android:text="Nokia"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -185,18 +199,17 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView23"
-        android:layout_below="@+id/NM_SON"
         android:background="#A9A8A8"/>
     <Button
         android:id="@+id/PM_1"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/NM_SON"
+        android:layout_height="wrap_content"
         android:text="SISD"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -206,19 +219,18 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView24"
-        android:layout_below="@+id/PM_1"
         android:background="#A9A8A8"/>
     <Button
         android:id="@+id/PM"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/PM_1"
+        android:layout_height="wrap_content"
         android:text="GDC"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -228,18 +240,17 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView25"
-        android:layout_below="@+id/PM"
         android:background="#A9A8A8"/>
     <Button
         android:id="@+id/RSO"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/PM"
+        android:layout_height="wrap_content"
         android:text="RSO"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -249,18 +260,17 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView26"
-        android:layout_below="@+id/RSO"
         android:background="#A9A8A8"/>
     <Button
         android:id="@+id/SISD"
         android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:layout_below="@+id/RSO"
+        android:layout_height="wrap_content"
         android:text="PM"
         android:textColor="@color/colorText1"
         android:textSize="12sp"
@@ -270,26 +280,12 @@
         android:textAlignment="textStart"
         android:drawablePadding="16dp"
         android:paddingLeft="12dp"
-        android:paddingRight="9dp" />
+        android:paddingRight="9dp"
+        android:layout_weight="1"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0.05dp"
         android:id="@+id/textView27"
-        android:layout_below="@+id/SISD"
         android:background="#A9A8A8"/>
-    <Button
-        android:id="@+id/COM"
-        android:layout_width="match_parent"
-        android:layout_height="42dp"
-        android:text="Communication-Operation"
-        android:textColor="@color/colorText1"
-        android:textSize="12sp"
-        android:drawableLeft="@mipmap/phonelist"
-        android:background="@drawable/phone_select"
-        android:drawableRight="@mipmap/next"
-        android:paddingLeft="12dp"
-        android:paddingRight="9dp"
-        android:layout_below="@+id/phone_list"
-        android:textAlignment="textStart"
-        android:drawablePadding="16dp"/>
+    </LinearLayout>
 </RelativeLayout>

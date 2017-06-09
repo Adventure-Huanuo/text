@@ -27,7 +27,7 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
 
     }
 
-    @Override
+    @Override//构建视图
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.fragment_page1, container,
@@ -66,17 +66,17 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
         tx1.setOnClickListener(this);
     }
 
-    @Override
+    @Override//回调方法，活动准备好和用户交互时调用
     public void onResume() {
         super.onResume();
     }
 
-    @Override
+    @Override//将消耗的CPU的资源释放掉，以保存关键数据
     public void onPause() {
         super.onPause();
     }
 
-    @Override
+    @Override//活动被销毁前调用，之后活动变为销毁状态
     public void onDestroy() {
         super.onDestroy();
 

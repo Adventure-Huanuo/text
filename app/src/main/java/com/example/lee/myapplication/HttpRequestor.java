@@ -164,7 +164,7 @@ public class HttpRequestor {
                 inputStream.close();
             }
         }
-        return resultBuffer.toString();
+        return resultBuffer.toString();//返回输入流
     }
 
     public void requestNet(String path,Handler handler) {

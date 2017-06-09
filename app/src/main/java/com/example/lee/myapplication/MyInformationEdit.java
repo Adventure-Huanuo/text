@@ -93,7 +93,7 @@ public class MyInformationEdit extends AppCompatActivity {
         confirm.setOnClickListener(new Button.OnClickListener(){//创建监听
 
             public void onClick(View v) {
-                Dialog alertDialog = new AlertDialog.Builder(MyInformationEdit.this).setTitle("确认提醒").setMessage("确定要修改吗?").setIcon(R.drawable.icon).
+                Dialog alertDialog = new AlertDialog.Builder(MyInformationEdit.this).setTitle("提示").setMessage("确定要修改吗?").setIcon(R.drawable.icon_1).
                         setPositiveButton("确认", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

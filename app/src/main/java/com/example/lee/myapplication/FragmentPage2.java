@@ -74,7 +74,7 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
                 break;
             case R.id.search_image:
                 Intent intent = new Intent(mActivity,PhoneListdetial.class);
-                String searchText = ((EditText) mView.findViewById(R.id.search_text)).getText().toString();
+                String searchText = ((EditText) mView.findViewById(R.id.search_text)).getText().toString();//获取信息成string将参数传到下一个activity
                 intent.putExtra("str",searchText);
                 startActivity(intent);
                 break;
