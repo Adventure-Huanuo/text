@@ -63,6 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             try{
                 DesUtils desUtils =new DesUtils("leemenz");
                 String account =pref.getString("account","");
+                //String password =pref.getString("password","");
                 String password =desUtils.decrypt(pref.getString("password",""));
                 accountEdit.setText(account);
                 passwordEdit.setText(password);
