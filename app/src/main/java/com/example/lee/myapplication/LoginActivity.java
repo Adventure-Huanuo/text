@@ -31,9 +31,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText passwordEdit;
     private Button login;
     private TextView vpn;
+    private TextView forgetpassword;
     private CheckBox checkBox1;
     private CheckBox checkBox2;
     private TextView responseText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         passwordEdit=(EditText)findViewById(R.id.password);
         login=(Button) findViewById(R.id.login);
         vpn=(TextView) findViewById(R.id.VPN);
+        forgetpassword=(TextView)findViewById(R.id.forget_password);
         /**
          * 强制使account的Edittext获得焦点
          * By:松鼠桂鱼
@@ -56,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         responseText = (TextView) findViewById(R.id.response_text);
         login.setOnClickListener(this);
         vpn.setOnClickListener(this);
+        forgetpassword.setOnClickListener(this);
         checkBox1=(CheckBox) findViewById(R.id.checkBox1);
         checkBox2=(CheckBox) findViewById(R.id.checkBox2);
         boolean isRemember=pref.getBoolean("checkBox2",false);
@@ -94,6 +98,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Intent intent = new Intent(LoginActivity.this, PDFViewActivity.class);
             startActivity(intent);
         }
+            if (v.getId()==R.id.forget_password){
+                Toast.makeText(this, "请联系管理员 " +
+                        "电话： 18673179546", Toast.LENGTH_SHORT).show();
+            }
+
     }
 
     private void sendRequestWithHttpURLConnection() {
