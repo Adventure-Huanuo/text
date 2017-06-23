@@ -117,7 +117,7 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
                                             public void onItemClick(AdapterView<?> parent,View view, int position, long id) {
                                                 SearchPerson searchPerson = searchList.get(position);
                                                 Intent intent = new Intent(mActivity,PhoneListdetial.class);
-                                                intent.putExtra("str", searchPerson.getName());
+                                                intent.putExtra("str",searchPerson.getName().trim());
                                                 startActivity(intent);
                                             }
                                         });
@@ -201,7 +201,7 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
             }catch (Exception e){
                 e.printStackTrace();
             }
-            SearchPerson search = new SearchPerson(name);
+            SearchPerson search = new SearchPerson("   "+name);
             searchList.add(search);
         }
     }
