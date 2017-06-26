@@ -71,7 +71,7 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
         pref = PreferenceManager.getDefaultSharedPreferences(mActivity);
         mSearchView = (SearchView) mView.findViewById(R.id.searchView);
         int id = mSearchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
-        TextView textView = (TextView) mSearchView.findViewById(id);
+        final TextView textView = (TextView) mSearchView.findViewById(id);  //获取SearchView中的EditText, 并改变其属性
         textView.setTextColor(Color.WHITE);//字体颜色
         //textView.setTextSize(20);//字体、提示字体大小
         textView.setHintTextColor(Color.WHITE);//提示字体颜色**
@@ -100,14 +100,14 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
                         public void handleMessage(Message msg) {
                             switch (msg.what) {
                                 case MESSAGE_OK:
-                                    mListView.setAdapter(null);
+                                    //mListView.setAdapter(null);
                                     String res = (String)msg.obj;
                                     try {
                                         JSONObject js = new JSONObject(res);
-                                        String rowcount = js.getString("rowcount");
+                                        String rowcount = js.getString("rowCount");
                                         int count = 0;
                                         count = Integer.parseInt(rowcount);
-                                        searchList.clear();
+                                        searchList.clear();  //关联前清空list
                                         initSearch(count,js);
                                         adapter = new SearchAdapter(mActivity, R.layout.search_item,searchList);
                                         mListView.setVisibility(mListView.VISIBLE);
@@ -119,6 +119,7 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
                                                 Intent intent = new Intent(mActivity,PhoneListdetial.class);
                                                 intent.putExtra("str",searchPerson.getName().trim());
                                                 startActivity(intent);
+                                                textView.setText(null);  //跳转后清空搜索框
                                             }
                                         });
                                     } catch (Exception e) {
@@ -180,8 +181,8 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
                     HttpRequestor httpRequestor = new HttpRequestor();
                     String res = httpRequestor.doPost("http://172.16.201.17:8080/HuanuoServer/SearchResp", dataMap);
                     Message message = new Message();
-                    message.obj=res;
-                    message.what=MESSAGE_OK;
+                    message.obj = res;
+                    message.what = MESSAGE_OK;
                     handler.sendMessage(message);
                 } catch (Exception e) {
                     e.getMessage();
@@ -205,5 +206,4 @@ public class FragmentPage2 extends Fragment implements View.OnClickListener {
             searchList.add(search);
         }
     }
-
 }

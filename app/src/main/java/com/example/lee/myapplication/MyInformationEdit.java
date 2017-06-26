@@ -52,7 +52,6 @@ public class MyInformationEdit extends AppCompatActivity {
         edit = (Button) findViewById(R.id.edit);
         confirm = (Button) findViewById(R.id.confirm);
         cancel = (Button) findViewById(R.id.cancel);
-        exit = (Button) findViewById(R.id.exit);
 
         textView4 = (EditText) findViewById(R.id.textView4);
         textView7 = (EditText) findViewById(R.id.textView7);
@@ -202,90 +201,6 @@ public class MyInformationEdit extends AppCompatActivity {
                 alertDialog.show();
             }
         });
-
-        /**
-         * by  川神
-         confirm.setOnClickListener(new Button.OnClickListener(){//创建监听
-         public void onClick(View v) {
-         JSONObject object = new JSONObject();
-         try {
-         object.put("gender",textView7.getText().toString());
-         object.put("iconurl","");
-         object.put("name",pref.getString("name",""));
-         object.put("tel",textView11.getText().toString());
-         object.put("location",textView15.getText().toString());
-         object.put("id",pref.getString("id",""));
-         object.put("depart",pref.getString("depart",""));
-         object.put("email",textView13.getText().toString());
-         } catch (JSONException e) {
-         e.printStackTrace();
-         }
-         sendRequestWithHttpURLConnection(object);
-         handler = new Handler(){
-        @Override
-        public void handleMessage(Message msg) {
-        // super.handleMessage(msg);
-        switch (msg.what){
-        case MESSAGE_OK:
-        String response = msg.obj.toString();
-        String code=null;
-        try {
-        JSONObject object1 = new JSONObject(response);
-        code = object1.getString("code");
-        } catch (JSONException e) {
-        e.printStackTrace();
-        }
-
-        if(code.equals("3")) {
-        //setEdit(textView4,"name");
-        setEdit(textView7,"gender");
-        //setEdit(textView9,"depart");
-        setEdit(textView11,"tel");
-        setEdit(textView13,"email");
-        setEdit(textView15,"location");
-        //setEdit(textView17,"id");
-        //setDisabled(textView4);
-        setDisabled(textView7);
-        //setDisabled(textView9);
-        setDisabled(textView11);
-        setDisabled(textView13);
-        setDisabled(textView15);
-        //setDisabled(textView17);
-        confirm.setVisibility(confirm.INVISIBLE);
-        cancel.setVisibility(cancel.INVISIBLE);
-        edit.setVisibility(cancel.VISIBLE);
-        } else {
-        getEdit(textView4,"name");
-        getEdit(textView7,"gender");
-        getEdit(textView9,"depart");
-        getEdit(textView11,"tel");
-        getEdit(textView13,"email");
-        getEdit(textView15,"location");
-        getEdit(textView17,"id");
-        //setDisabled(textView4);
-        setDisabled(textView7);
-        //setDisabled(textView9);
-        setDisabled(textView11);
-        setDisabled(textView13);
-        setDisabled(textView15);
-        //setDisabled(textView17);
-        confirm.setVisibility(confirm.INVISIBLE);
-        cancel.setVisibility(cancel.INVISIBLE);
-        edit.setVisibility(cancel.VISIBLE);
-        Toast.makeText(MyInformationEdit.this,"资料更新失败",Toast.LENGTH_SHORT).show();
-        }
-        break;
-        case MESSAGE_ERR:
-        Toast.makeText(MyInformationEdit.this,"服务器未响应，请检查网络",Toast.LENGTH_SHORT).show();
-        break;
-        default:
-        break;
-        }
-        }
-        };
-         }
-         });
-         */
         cancel.setOnClickListener(new Button.OnClickListener(){//创建监听
             public void onClick(View v) {
                 getEdit(textView4,"name");

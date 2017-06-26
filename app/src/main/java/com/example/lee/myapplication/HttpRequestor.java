@@ -50,7 +50,7 @@ public class HttpRequestor {
 
         URLConnection connection = openConnection(localURL);
         HttpURLConnection httpURLConnection = (HttpURLConnection)connection;
-
+        httpURLConnection.setRequestMethod("GET");
         httpURLConnection.setRequestProperty("Accept-Charset", charset);
         httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 

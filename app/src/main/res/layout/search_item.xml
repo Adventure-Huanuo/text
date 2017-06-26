@@ -14,7 +14,7 @@
         android:layout_marginRight="40dp"
         android:textSize="16dp"
         android:gravity="center_vertical"
-        android:text="aaaaaaaaaa"
+        android:text="显示关联信息"
         android:textColor="#696969"
         android:background="#FFFFFF"/>
 
