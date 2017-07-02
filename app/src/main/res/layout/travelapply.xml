@@ -128,8 +128,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/spinner_traveltype"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="15dp" />
+                    android:layout_weight="1" />
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner_traveltype_det"
+                    android:layout_weight="1" />
 
             </LinearLayout>
             <TextView
@@ -159,6 +163,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView9"
                     android:layout_weight="1"/>
+
                 <TextView
                     android:text="居住地"
                     android:textColor="#7C7374"
@@ -166,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView10"
                     android:layout_weight="1"/>
+
                 <TextView
                     android:textColor="#7C7374"
                     android:text=" "
@@ -301,12 +307,13 @@
                         android:layout_marginLeft="0.5dp"
                         android:background="@color/colorMain"
                         android:text="全选"
+                        android:gravity="center"
                         android:textSize="12sp"
                         android:paddingLeft="3dp"
                         android:paddingRight="3dp"
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="0.5"/>
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -315,12 +322,13 @@
                         android:layout_marginLeft="0.5dp"
                         android:background="@color/colorMain"
                         android:text="NO."
+                        android:gravity="center"
                         android:textSize="12sp"
                         android:paddingLeft="3dp"
                         android:paddingRight="3dp"
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
-                        android:layout_weight="1."/>
+                        android:layout_weight="0.5"/>
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -328,7 +336,8 @@
                         android:layout_marginBottom="0.5dp"
                         android:layout_marginLeft="0.5dp"
                         android:background="@color/colorMain"
-                        android:text="结束日期"
+                        android:gravity="center"
+                        android:text="开始日期"
                         android:textSize="12sp"
                         android:paddingLeft="3dp"
                         android:paddingRight="3dp"
@@ -342,7 +351,8 @@
                         android:layout_marginBottom="0.5dp"
                         android:layout_marginLeft="0.5dp"
                         android:background="@color/colorMain"
-                        android:text="开始日期"
+                        android:text="结束日期"
+                        android:gravity="center"
                         android:textSize="12sp"
                         android:paddingLeft="3dp"
                         android:paddingRight="3dp"
@@ -357,6 +367,7 @@
                         android:layout_marginLeft="0.5dp"
                         android:background="@color/colorMain"
                         android:text="出发城市"
+                        android:gravity="center"
                         android:textSize="12sp"
                         android:paddingLeft="3dp"
                         android:paddingRight="3dp"
@@ -385,7 +396,7 @@
                         android:paddingRight="3dp"
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="0.5"/>
                     <EditText
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -399,7 +410,7 @@
                         android:paddingRight="3dp"
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="0.5"/>
                     <EditText
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -413,7 +424,8 @@
                         android:paddingRight="3dp"
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
-                        android:layout_weight="1.2"/>
+                        android:layout_weight="1.2"
+                        android:id="@+id/start_date" />
                     <EditText
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -427,7 +439,8 @@
                         android:paddingRight="3dp"
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
-                        android:layout_weight="1.2"/>
+                        android:layout_weight="1.2"
+                        android:id="@+id/end_date" />
                     <EditText
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -465,7 +478,7 @@
                         android:paddingRight="3dp"
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
-                        android:layout_weight="1"
+                        android:layout_weight="0.55"
                         android:id="@+id/textView29" />
 
                     <EditText
@@ -481,7 +494,7 @@
                         android:paddingRight="3dp"
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
-                        android:layout_weight="4.6"
+                        android:layout_weight="4.5"
                         android:id="@+id/editText" />
                 </TableRow>
             </TableLayout>
@@ -494,7 +507,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="车票预定信息(申请人本人填写)"
+                    android:text="机票预定信息(申请人本人填写)"
                     android:textSize="14sp"
                     android:textColor="@color/colorBackgroud"
                     android:layout_marginLeft="20dp"
@@ -518,6 +531,7 @@
                             android:layout_marginLeft="0.5dp"
                             android:background="@color/colorMain"
                             android:text="全选"
+                            android:gravity="center"
                             android:textSize="12sp"
                             android:paddingLeft="3dp"
                             android:paddingRight="3dp"
@@ -532,6 +546,7 @@
                             android:layout_marginLeft="0.5dp"
                             android:background="@color/colorMain"
                             android:text="NO."
+                            android:gravity="center"
                             android:textSize="12sp"
                             android:paddingLeft="3dp"
                             android:paddingRight="3dp"
@@ -546,6 +561,7 @@
                             android:layout_marginLeft="0.5dp"
                             android:background="@color/colorMain"
                             android:text="乘机日期"
+                            android:gravity="center"
                             android:textSize="12sp"
                             android:paddingLeft="3dp"
                             android:paddingRight="3dp"
@@ -560,6 +576,7 @@
                             android:layout_marginLeft="0.5dp"
                             android:background="@color/colorMain"
                             android:text="出发地"
+                            android:gravity="center"
                             android:textSize="12sp"
                             android:paddingLeft="3dp"
                             android:paddingRight="3dp"
@@ -574,6 +591,7 @@
                             android:layout_marginLeft="0.5dp"
                             android:background="@color/colorMain"
                             android:text="目的地"
+                            android:gravity="center"
                             android:textSize="12sp"
                             android:paddingLeft="3dp"
                             android:paddingRight="3dp"
@@ -588,6 +606,7 @@
                             android:layout_marginLeft="0.5dp"
                             android:background="@color/colorMain"
                             android:text="起飞时间"
+                            android:gravity="center"
                             android:textSize="12sp"
                             android:paddingLeft="3dp"
                             android:paddingRight="3dp"
@@ -602,6 +621,7 @@
                             android:layout_marginLeft="0.5dp"
                             android:background="@color/colorMain"
                             android:text="航班号"
+                            android:gravity="center"
                             android:textSize="12sp"
                             android:paddingLeft="3dp"
                             android:paddingRight="3dp"
@@ -659,7 +679,8 @@
                             android:paddingRight="3dp"
                             android:paddingTop="9dp"
                             android:paddingBottom="9dp"
-                            android:layout_weight="1.5"/>
+                            android:layout_weight="1.5"
+                            android:id="@+id/flight_start_date" />
                         <EditText
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -701,7 +722,8 @@
                             android:paddingRight="3dp"
                             android:paddingTop="9dp"
                             android:paddingBottom="9dp"
-                            android:layout_weight="1.5"/>
+                            android:layout_weight="1.5"
+                            android:id="@+id/time_toflight" />
                         <EditText
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -840,6 +862,7 @@
                                 android:text="是"
                                 android:textColor="@color/colorText"
                                 android:checked="true"/>
+
                             <RadioButton
                                 android:id="@+id/RB_4"
                                 android:layout_width="wrap_content"
@@ -858,6 +881,22 @@
                         android:background="@color/colorText1"
                         android:id="@+id/Tb_2">
 
+                        <EditText
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginBottom="0.5dp"
+                            android:layout_marginLeft="0.5dp"
+                            android:background="@color/colorMain"
+                            android:text="  "
+                            android:textSize="12sp"
+                            android:paddingLeft="3dp"
+                            android:paddingRight="3dp"
+                            android:paddingTop="9dp"
+                            android:paddingBottom="9dp"
+                            android:layout_weight="7.6"
+                            android:id="@+id/editText_1" />
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -874,21 +913,6 @@
                             android:layout_weight="1"
                             android:id="@+id/bz" />
 
-                        <EditText
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginBottom="0.5dp"
-                            android:layout_marginLeft="0.5dp"
-                            android:background="@color/colorMain"
-                            android:text="  "
-                            android:textSize="12sp"
-                            android:paddingLeft="3dp"
-                            android:paddingRight="3dp"
-                            android:paddingTop="9dp"
-                            android:paddingBottom="9dp"
-                            android:layout_weight="7.6"
-                            android:id="@+id/editText_1" />
                     </TableRow>
                 </TableLayout>
                 <TextView
@@ -902,17 +926,18 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom='12dp'>
+        android:layout_centerHorizontal="true">
         <Button
             android:id="@+id/save"
             android:layout_width="150dp"
-            android:layout_height="35dp"
+            android:layout_height="32dp"
             android:layout_gravity="center"
             android:text="保存"
             android:textSize="18dp"
@@ -923,7 +948,7 @@
         <Button
             android:id="@+id/apply"
             android:layout_width="150dp"
-            android:layout_height="35dp"
+            android:layout_height="32dp"
             android:layout_gravity="center"
             android:text="提交"
             android:textSize="18dp"
