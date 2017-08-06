@@ -38,7 +38,6 @@
         <activity android:name=".AlterPassword" />
         <activity android:name=".me_paper2" />
 
-
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -51,10 +50,14 @@
         <activity android:name=".ApartmentItem" />
         <activity android:name=".MyInformationEdit" />
         <activity android:name=".ApartmentItem1" />
-        <activity android:name=".travelapply"
-            android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity
+            android:name=".travelapply"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".PhotoShow" />
         <activity android:name=".PDFViewActivity" />
+        <activity android:name=".PersonalWorkspace" />
+        <activity android:name=".TravelList"
+            android:windowSoftInputMode="adjustPan|stateHidden"/>
     </application>
 
 </manifest>
