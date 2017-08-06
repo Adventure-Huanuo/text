@@ -111,7 +111,8 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
                 Toast.makeText(mActivity,"公共信息", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button_mef:
-                Toast.makeText(mActivity,"个人工作台", Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(mActivity, PersonalWorkspace.class);
+                startActivity(intent2);
                 break;
             case R.id.button_re:
                 Toast.makeText(mActivity,"内部招聘", Toast.LENGTH_SHORT).show();
