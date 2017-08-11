@@ -55,9 +55,14 @@
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".PhotoShow" />
         <activity android:name=".PDFViewActivity" />
-        <activity android:name=".PersonalWorkspace" />
-        <activity android:name=".TravelList"
-            android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity
+            android:name=".TravelList"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".Personal_Workspace_new" />
+        <activity android:name=".BusinessList" />
+        <activity android:name=".BusinessListAdapter" />
+        <activity android:name=".Work_Todo" />
+        <activity android:name=".Work_Done"></activity>
     </application>
 
 </manifest>
