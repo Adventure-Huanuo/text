@@ -47,7 +47,6 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".PhoneListdetial" />
-        <activity android:name=".ApartmentItem" />
         <activity android:name=".MyInformationEdit" />
         <activity android:name=".ApartmentItem1" />
         <activity
@@ -62,7 +61,10 @@
         <activity android:name=".BusinessList" />
         <activity android:name=".BusinessListAdapter" />
         <activity android:name=".Work_Todo" />
-        <activity android:name=".Work_Done"></activity>
+        <activity android:name=".Work_Done" />
+        <activity android:name=".PersonalWorkspace" />
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".FragmentPage1"></activity>
     </application>
 
 </manifest>

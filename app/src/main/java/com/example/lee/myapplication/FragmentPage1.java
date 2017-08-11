@@ -35,7 +35,6 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
         return mView;
     }
 
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -82,7 +81,7 @@ public class FragmentPage1 extends Fragment implements View.OnClickListener {
         super.onDestroy();
 
     }
-//使用toast实现按钮点击响应，弹出toast的功能要在onClick方法中编写
+    //使用toast实现按钮点击响应，弹出toast的功能要在onClick方法中编写
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

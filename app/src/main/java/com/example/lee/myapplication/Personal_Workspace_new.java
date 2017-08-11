@@ -42,6 +42,9 @@ public class Personal_Workspace_new extends AppCompatActivity {
         BusinessListAdapter adapter=new BusinessListAdapter(businessList);
         recyclerView.setAdapter(adapter);
     }
+
+
+
     private void initBusinessLists(){
         for (int i=0;i<10;i++){
             BusinessList b=new BusinessList("11","11","12","11","22");
