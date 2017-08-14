@@ -1,12 +1,11 @@
 package com.example.lee.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -19,8 +18,10 @@ public class BusinessListAdapter extends RecyclerView.Adapter<BusinessListAdapte
         TextView businesssegment;
         TextView businesstime;
         TextView businessdealer;
+        View businessView;
         public ViewHolder(View view){
             super(view);
+            businessView = view;
             businesstype=(TextView)view.findViewById(R.id.type);
             businessname=(TextView)view.findViewById(R.id.name);
             businesssegment=(TextView)view.findViewById(R.id.segment);
@@ -34,7 +35,19 @@ public class BusinessListAdapter extends RecyclerView.Adapter<BusinessListAdapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.businesslist_item,parent,false);
-        ViewHolder holder=new ViewHolder(view);
+        final ViewHolder holder=new ViewHolder(view);
+        holder.businessView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                int position = holder.getAdapterPosition();
+                BusinessList businessList = mBusinessList.get(position);
+                Toast.makeText(v.getContext(),businessList.getBinderDocIDOS(),Toast.LENGTH_SHORT).show();
+                //Intent intent = new Intent(v.getContext(), PhoneListdetial.class);
+                //intent.putExtra("str", businessList.getBinderDocIDOS());
+                //v.getContext().startActivity(intent);
+
+            }
+        });
         return holder;
     }
     @Override

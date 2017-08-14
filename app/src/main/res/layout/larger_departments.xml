@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
-    <Button
+    <TextView
         android:id="@+id/larger_depart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorText1"
-        android:textSize="12sp"
+        android:textSize="18sp"
         android:drawableLeft="@mipmap/phonelist"
         android:background="@drawable/phone_select"
         android:drawableRight="@mipmap/next"

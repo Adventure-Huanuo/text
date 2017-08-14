@@ -1,12 +1,12 @@
 package com.example.lee.myapplication;
 
 public class LargerDepartments {
-    private String item_name1;
+    private String depart_name;
     public LargerDepartments(String item_name)
     {
-        this.item_name1 = item_name;
+        this.depart_name = item_name;
     }
-    public String getItem_name() {
-        return item_name1;
+    public String getDepart_name() {
+        return depart_name;
     }
 }

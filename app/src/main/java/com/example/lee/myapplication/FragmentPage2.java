@@ -3,13 +3,13 @@ package com.example.lee.myapplication;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
@@ -18,8 +18,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -41,9 +39,9 @@ public class FragmentPage2 extends Fragment {
     private View mView;
     private SearchView mSearchView;
     private ListView mListView;
+    private RecyclerView mRecyclerView;
     private ArrayAdapter adapter;
     private SharedPreferences pref;
-    private SharedPreferences.Editor editor;
     private List<SearchPerson> searchList = new ArrayList<>();
     private List<LargerDepartments> apartmentList=new ArrayList<>();
     private Handler handler;
@@ -60,8 +58,8 @@ public class FragmentPage2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_page2, container,
-                false);
+        mView = inflater.inflate(R.layout.fragment_page2, container, false);
+
         return mView;
     }
 
@@ -73,9 +71,10 @@ public class FragmentPage2 extends Fragment {
         int id = mSearchView.getContext().getResources().getIdentifier("android:id/search_src_text", null, null);
         final TextView textView = (TextView) mSearchView.findViewById(id);  //获取SearchView中的EditText, 并改变其属性
         textView.setTextColor(Color.WHITE);//字体颜色
-        //textView.setTextSize(20);//字体、提示字体大小
+        textView.setTextSize(20);//字体、提示字体大小
         textView.setHintTextColor(Color.WHITE);//提示字体颜色**
         mListView = (ListView) mView.findViewById(R.id.listView);
+        mRecyclerView = (RecyclerView) mView.findViewById(R.id.recycler_view);
         mListView.bringToFront();
         mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             // 当点击搜索按钮时触发该方法
@@ -153,11 +152,12 @@ public class FragmentPage2 extends Fragment {
                                 e.printStackTrace();
                             }
                             initApartment(count,json);
-                            RecyclerView recyclerView=(RecyclerView) mActivity.findViewById(R.id.recycler_view);
+                            //RecyclerView recyclerView=(RecyclerView) mActivity.findViewById(R.id.recycler_view);
                             LinearLayoutManager layoutManager=new LinearLayoutManager(mActivity);
-                            recyclerView.setLayoutManager(layoutManager);
-                            LargerDepaAdapter adapter=new LargerDepaAdapter(apartmentList);
-                            recyclerView.setAdapter(adapter);
+                            mRecyclerView.setLayoutManager(layoutManager);
+                            LargerDepaAdapter adapter = new LargerDepaAdapter(apartmentList);
+                            mRecyclerView.addItemDecoration(new SpaceItemDecoration(30)); //设置item间距，30dp
+                            mRecyclerView.setAdapter(adapter);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -196,7 +196,6 @@ public class FragmentPage2 extends Fragment {
                     dataMap.put("id",pref.getString("id",""));
                     dataMap.put("token",pref.getString("token", ""));
                     HttpRequestor httpRequestor = new HttpRequestor();
-                    //String res = httpRequestor.doPost(url, dataMap);
                     String res = httpRequestor.doPost("http://172.16.201.17:8080/HuanuoServer/SearchResp", dataMap);
                     Message message = new Message();
                     message.obj = res;
@@ -224,7 +223,6 @@ public class FragmentPage2 extends Fragment {
                     dataMap.put("id",pref.getString("id",""));
 
                     HttpRequestor httpRequestor = new HttpRequestor();
-                    //String res = httpRequestor.doPost(url, dataMap);
                     String res = httpRequestor.doPost("http://172.16.201.17:8080/HuanuoServer/DepartmentTest", dataMap);
                     Message message = new Message();
                     message.obj = res;
@@ -263,6 +261,23 @@ public class FragmentPage2 extends Fragment {
             }
             LargerDepartments largerDepartments = new LargerDepartments(name);
             apartmentList.add(largerDepartments);
+        }
+    }
+    //在该类的getItemOffsets方法中设置item各个方向的间距，这里面加入了如果是RecyclerView的第一个子项，则设置该子项上方的间距。
+    class SpaceItemDecoration extends RecyclerView.ItemDecoration {
+        int mSpace;
+        @Override
+        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+            super.getItemOffsets(outRect, view, parent, state);
+            outRect.left = mSpace;
+            outRect.right = mSpace;
+            outRect.bottom = mSpace;
+            if (parent.getChildAdapterPosition(view) == 0) {
+                outRect.top = mSpace;
+            }
+        }
+        public SpaceItemDecoration(int space) {
+            this.mSpace = space;
         }
     }
 }

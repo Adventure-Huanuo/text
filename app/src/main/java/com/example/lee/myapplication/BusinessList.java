@@ -1,20 +1,19 @@
 package com.example.lee.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 public class BusinessList {
     private String type;
     private String name;
     private String segment;
     private String time;
     private String dealer;
-public BusinessList(String type,String name,String segment,String time,String dealer) {
+    private String binderDocIDOS;
+public BusinessList(String type,String name,String segment,String time,String dealer,String binderDocIDOS) {
     this.type = type;
     this.name = name;
     this.segment = segment;
     this.time = time;
     this.dealer = dealer;
+    this.binderDocIDOS = binderDocIDOS;
 }
     public String getType(){
         return type;
@@ -30,5 +29,8 @@ public BusinessList(String type,String name,String segment,String time,String de
     }
     public String getDealer(){
         return dealer;
+    }
+    public String getBinderDocIDOS(){
+        return binderDocIDOS;
     }
 }
