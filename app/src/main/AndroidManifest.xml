@@ -63,8 +63,12 @@
         <activity android:name=".Work_Todo" />
         <activity android:name=".Work_Done" />
         <activity android:name=".PersonalWorkspace" />
-            android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity android:name=".FragmentPage1"></activity>
+        android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity android:name=".FragmentPage1" />
+        <activity android:name=".BusinessList01" />
+        <activity android:name=".BusinessListAdapter01" />
+        <activity android:name=".BusinessList02" />
+        <activity android:name=".BusinessListAdapter02"></activity>
     </application>
 
 </manifest>

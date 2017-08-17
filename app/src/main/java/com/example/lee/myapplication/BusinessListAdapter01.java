@@ -1,7 +1,5 @@
 package com.example.lee.myapplication;
 
-import android.content.Intent;
-import android.support.v7.widget.ActivityChooserView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,18 +8,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
-import java.util.jar.Attributes;
 
-public class BusinessListAdapter extends RecyclerView.Adapter<BusinessListAdapter.ViewHolder> {
+public class BusinessListAdapter01 extends RecyclerView.Adapter<BusinessListAdapter01.ViewHolder> {
 
-    private List<BusinessList> mBusinessList;
+    private List<BusinessList01> mBusinessList01;
     static class ViewHolder extends RecyclerView.ViewHolder{
         TextView businesstype;
         TextView businessname;
         TextView businesssegment;
         TextView businesstime;
         TextView businessdealer;
-        TextView wait;
         View businessView;
         public ViewHolder(View view){
             super(view);
@@ -33,20 +29,19 @@ public class BusinessListAdapter extends RecyclerView.Adapter<BusinessListAdapte
             businessdealer=(TextView)view.findViewById(R.id.dealer);
         }
     }
-    public BusinessListAdapter(List<BusinessList> businessList){
-        mBusinessList=businessList;
+    public BusinessListAdapter01(List<BusinessList01> businessList01){
+        mBusinessList01=businessList01;
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
-        final View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.businesslist_item,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.businesslist_item01,parent,false);
         final ViewHolder holder=new ViewHolder(view);
         holder.businessView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 int position = holder.getAdapterPosition();
-                BusinessList businessList = mBusinessList.get(position);
-
-                Toast.makeText(v.getContext(),businessList.getBinderDocIDOS(),Toast.LENGTH_SHORT).show();
+                BusinessList01 businessList01 = mBusinessList01.get(position);
+                //Toast.makeText(v.getContext(),businessList01.getBinderDocIDOS(),Toast.LENGTH_SHORT).show();
                 //Intent intent = new Intent(v.getContext(), PhoneListdetial.class);
                 //intent.putExtra("str", businessList.getBinderDocIDOS());
                 //v.getContext().startActivity(intent);
@@ -57,15 +52,15 @@ public class BusinessListAdapter extends RecyclerView.Adapter<BusinessListAdapte
     }
     @Override
     public void onBindViewHolder(ViewHolder holder,int position){
-        BusinessList businessList=mBusinessList.get(position);
-        holder.businesstype.setText(businessList.getType());
-        holder.businessname.setText(businessList.getName());
-        holder.businesssegment.setText(businessList.getSegment());
-        holder.businesstime.setText(businessList.getTime());
-        holder.businessdealer.setText(businessList.getDealer());
+        BusinessList01 businessList01=mBusinessList01.get(position);
+        holder.businesstype.setText(businessList01.getType());
+        holder.businessname.setText(businessList01.getName());
+        holder.businesssegment.setText(businessList01.getSegment());
+        holder.businesstime.setText(businessList01.getTime());
+        holder.businessdealer.setText(businessList01.getDealer());
     }
     @Override
     public int getItemCount(){
-        return mBusinessList.size();
+        return mBusinessList01.size();
     }
 }

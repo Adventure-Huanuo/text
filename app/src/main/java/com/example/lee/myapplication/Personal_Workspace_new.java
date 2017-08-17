@@ -1,5 +1,6 @@
 package com.example.lee.myapplication;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
@@ -9,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONObject;
 import java.util.ArrayList;
@@ -22,6 +25,8 @@ public class Personal_Workspace_new extends AppCompatActivity {
     private SharedPreferences pref;
     private Handler handler;
     private Handler handler1;
+    private TextView tv;
+    private TextView tv1;
     final static int MESSAGE_OK = 1;
     final static int MESSAGE_OK1 = 1;
 
@@ -30,6 +35,24 @@ public class Personal_Workspace_new extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         pref = PreferenceManager.getDefaultSharedPreferences(this);
         setContentView(R.layout.personal__workspace_new);
+        TextView tv=(TextView)findViewById(R.id.wait);
+        TextView tv1=(TextView)findViewById(R.id.done);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Personal_Workspace_new.this,Work_Todo.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+        tv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Personal_Workspace_new.this,Work_Done.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
         sendRequestWithHttpURLConnection("Ongoing");
         handler = new Handler() {
             @Override
