@@ -21,14 +21,9 @@ import java.util.Map;
 
 public class Personal_Workspace_new extends AppCompatActivity {
     private List<BusinessList> businessList=new ArrayList<>();
-    private List<LargerDepartments> departmentsList=new ArrayList<>();
     private SharedPreferences pref;
     private Handler handler;
-    private Handler handler1;
-    private TextView tv;
-    private TextView tv1;
     final static int MESSAGE_OK = 1;
-    final static int MESSAGE_OK1 = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

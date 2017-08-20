@@ -21,7 +21,6 @@ public class BusinessListAdapter extends RecyclerView.Adapter<BusinessListAdapte
         TextView businesssegment;
         TextView businesstime;
         TextView businessdealer;
-        TextView wait;
         View businessView;
         public ViewHolder(View view){
             super(view);
