@@ -7,14 +7,14 @@ public class BusinessList {
     private String time;
     private String dealer;
     private String binderDocIDOS;
-public BusinessList(String type,String name,String segment,String time,String dealer,String binderDocIDOS) {
-    this.type = type;
-    this.name = name;
-    this.segment = segment;
-    this.time = time;
-    this.dealer = dealer;
-    this.binderDocIDOS = binderDocIDOS;
-}
+    public BusinessList(String type,String name,String segment,String time,String dealer,String binderDocIDOS) {
+        this.type = type;
+        this.name = name;
+        this.segment = segment;
+        this.time = time;
+        this.dealer = dealer;
+        this.binderDocIDOS = binderDocIDOS;
+    }
     public String getType(){
         return type;
     }
