@@ -202,6 +202,39 @@ public class FragmentPage3 extends Fragment implements View.OnClickListener {
             case R.id.textView_1:
                 sendRequestWithHttpURLConnection3(tv_1.getText().toString());
                 break;
+            case R.id.textView_2:
+                sendRequestWithHttpURLConnection3(tv_2.getText().toString());
+                break;
+            case R.id.textView_3:
+                sendRequestWithHttpURLConnection3(tv_3.getText().toString());
+                break;
+            case R.id.textView_4:
+                sendRequestWithHttpURLConnection3(tv_4.getText().toString());
+                break;
+            case R.id.textView1:
+                sendRequestWithHttpURLConnection3(tv1.getText().toString());
+                break;
+            case R.id.textView2:
+                sendRequestWithHttpURLConnection3(tv2.getText().toString());
+                break;
+            case R.id.textView3:
+                sendRequestWithHttpURLConnection3(tv3.getText().toString());
+                break;
+            case R.id.textView4:
+                sendRequestWithHttpURLConnection3(tv4.getText().toString());
+                break;
+            case R.id.textView01:
+                sendRequestWithHttpURLConnection3(tv01.getText().toString());
+                break;
+            case R.id.textView02:
+                sendRequestWithHttpURLConnection3(tv02.getText().toString());
+                break;
+            case R.id.textView03:
+                sendRequestWithHttpURLConnection3(tv03.getText().toString());
+                break;
+            case R.id.textView04:
+                sendRequestWithHttpURLConnection3(tv04.getText().toString());
+                break;
         }
     }
 
