@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/travel_list"
+    android:id="@+id/apartment_item_activity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.lee.myapplication.TravelList">
+    android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -38,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="申请人"
-                    android:layout_weight="1"/>
+                    android:layout_weight="0.5"/>
                 <TextView
                     android:text=" "
                     android:layout_width="wrap_content"
@@ -50,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="部门"
-                    android:layout_weight="1"/>
+                    android:layout_weight="0.5"/>
                 <TextView
                     android:text=" "
                     android:layout_width="wrap_content"
@@ -61,7 +56,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="申请日期"
-                    android:layout_weight="1"/>
+                    android:layout_weight="0.5"/>
 
                 <TextView
                     android:text=" "
@@ -89,26 +84,16 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/apply_1"
                     android:layout_marginTop="9dp"/>
-                <RadioGroup
+
+                <TextView
+                    android:id="@+id/RB1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <RadioButton
-                        android:id="@+id/RB1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="新增"
-                        android:textColor="@color/colorText"
-                        android:layout_toRightOf="@+id/textView5"
-                        android:checked="true"/>
-                    <RadioButton
-                        android:id="@+id/RB2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="变更"
-                        android:textColor="@color/colorText"
-                        android:layout_toRightOf="@+id/RB1" />
-                </RadioGroup>
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_toRightOf="@+id/textView5"
+                    android:text="新增"
+                    android:textColor="@color/colorText" />
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -129,17 +114,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView6" />
-                <Spinner
+
+                <TextView
+                    android:id="@+id/spinner_traveltype"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner_traveltype"
-                    android:layout_weight="1" />
-                <Spinner
+                    android:layout_marginLeft="25dp"
+                    android:layout_weight="1"
+                    android:text="商务差旅" />
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/spinner_traveltype_det"
-                    android:layout_weight="1" />
-
+                    android:layout_weight="1"
+                    android:text="非项目"/>
             </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
@@ -176,7 +164,6 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView10"
                     android:layout_weight="1"/>
-
                 <TextView
                     android:textColor="#7C7374"
                     android:text=" "
@@ -204,16 +191,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView12" />
-                <EditText
+                <TextView
                     android:textColor="#7C7374"
                     android:textSize="12dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView13"
                     android:enabled="true"
-                    android:focusable="true" />
+                    android:focusable="true"
+                    android:layout_marginLeft="20dp"/>
             </LinearLayout>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0.1dp"
@@ -239,19 +226,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-                    <RadioButton
+                    <TextView
                         android:id="@+id/RB3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="是"
                         android:textColor="@color/colorText"
-                        android:checked="true"/>
-                    <RadioButton
-                        android:id="@+id/RB4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="否"
-                        android:textColor="@color/colorText" />
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="9dp"/>
                 </RadioGroup>
             </LinearLayout>
             <TextView
@@ -389,7 +371,7 @@
                     android:paddingTop="0.5dp"
                     android:background="@color/colorText1"
                     android:id="@+id/Tb2">
-                    <EditText
+                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -403,7 +385,7 @@
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
                         android:layout_weight="0.5"/>
-                    <EditText
+                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -417,7 +399,7 @@
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
                         android:layout_weight="0.5"/>
-                    <EditText
+                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -432,7 +414,7 @@
                         android:paddingBottom="9dp"
                         android:layout_weight="1.2"
                         android:id="@+id/start_date" />
-                    <EditText
+                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -447,7 +429,7 @@
                         android:paddingBottom="9dp"
                         android:layout_weight="1.2"
                         android:id="@+id/end_date" />
-                    <EditText
+                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -461,7 +443,6 @@
                         android:paddingTop="9dp"
                         android:paddingBottom="9dp"
                         android:layout_weight="1.2"/>
-
                 </TableRow>
                 <TableRow
                     android:orientation="horizontal"
@@ -487,7 +468,7 @@
                         android:layout_weight="0.55"
                         android:id="@+id/textView29" />
 
-                    <EditText
+                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
@@ -644,7 +625,7 @@
                         android:paddingTop="0.5dp"
                         android:background="@color/colorText1"
                         android:id="@+id/Tb4">
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -658,7 +639,7 @@
                             android:paddingTop="9dp"
                             android:paddingBottom="9dp"
                             android:layout_weight="1"/>
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -672,7 +653,7 @@
                             android:paddingTop="9dp"
                             android:paddingBottom="9dp"
                             android:layout_weight="1"/>
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -687,7 +668,7 @@
                             android:paddingBottom="9dp"
                             android:layout_weight="1.5"
                             android:id="@+id/flight_start_date" />
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -701,7 +682,7 @@
                             android:paddingTop="9dp"
                             android:paddingBottom="9dp"
                             android:layout_weight="1.2"/>
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -715,7 +696,7 @@
                             android:paddingTop="9dp"
                             android:paddingBottom="9dp"
                             android:layout_weight="1.2"/>
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -730,7 +711,7 @@
                             android:paddingBottom="9dp"
                             android:layout_weight="1.5"
                             android:id="@+id/time_toflight" />
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -808,7 +789,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -834,20 +815,15 @@
                             android:paddingTop="2dp"
                             android:paddingBottom="2dp"
                             android:layout_gravity="center">
-                            <RadioButton
+                            <TextView
                                 android:id="@+id/RB_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="是"
                                 android:textColor="@color/colorText"
-                                android:checked="true"/>
-
-                            <RadioButton
-                                android:id="@+id/RB_2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="否"
-                                android:textColor="@color/colorText" />
+                                android:checked="true"
+                                android:layout_marginTop="1dp"
+                                android:gravity="center"/>
                         </RadioGroup>
 
                         <RadioGroup
@@ -861,20 +837,15 @@
                             android:paddingRight="2dp"
                             android:paddingTop="2dp"
                             android:paddingBottom="2dp">
-                            <RadioButton
+                            <TextView
                                 android:id="@+id/RB_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="是"
                                 android:textColor="@color/colorText"
-                                android:checked="true"/>
-
-                            <RadioButton
-                                android:id="@+id/RB_4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="否"
-                                android:textColor="@color/colorText" />
+                                android:checked="true"
+                                android:layout_marginTop="1dp"
+                                android:gravity="center"/>
                         </RadioGroup>
 
                     </TableRow>
@@ -887,7 +858,7 @@
                         android:background="@color/colorText1"
                         android:id="@+id/Tb_2">
 
-                        <EditText
+                        <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -964,3 +935,5 @@
             android:layout_alignParentRight='true'/>
     </RelativeLayout>
 </RelativeLayout>
+
+

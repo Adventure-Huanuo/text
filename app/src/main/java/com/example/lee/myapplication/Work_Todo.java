@@ -67,8 +67,8 @@ public class Work_Todo extends AppCompatActivity {
     }
 
     private void initBusinessList01s(){
-        for (int i=0;i<10;i++){
-            BusinessList01 a=new BusinessList01("11","11","12","11","22");
+        for (int i=0;i<1;i++){
+            BusinessList01 a=new BusinessList01("无","无","无","无","无");
             businessList01.add(a);
         }
     }
