@@ -45,10 +45,11 @@ public class BusinessListAdapter extends RecyclerView.Adapter<BusinessListAdapte
                 int position = holder.getAdapterPosition();
                 BusinessList businessList = mBusinessList.get(position);
 
-                Toast.makeText(v.getContext(),businessList.getBinderDocIDOS(),Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(v.getContext(), PhoneListdetial.class);
-                //intent.putExtra("str", businessList.getBinderDocIDOS());
-                //v.getContext().startActivity(intent);
+                //Toast.makeText(v.getContext(),businessList.getBinderDocIDOS(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), TravelList.class);
+                intent.putExtra("str1","Ongoing");
+                intent.putExtra("str2", businessList.getBinderDocIDOS());
+                v.getContext().startActivity(intent);
 
             }
         });

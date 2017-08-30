@@ -43,10 +43,11 @@ public class BusinessListAdapter02 extends RecyclerView.Adapter<BusinessListAdap
                 int position = holder.getAdapterPosition();
                 BusinessList02 businessList = mBusinessList.get(position);
 
-                Toast.makeText(v.getContext(),businessList.getBinderDocIDOS(),Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(v.getContext(), PhoneListdetial.class);
-                //intent.putExtra("str", businessList.getBinderDocIDOS());
-                //v.getContext().startActivity(intent);
+                //Toast.makeText(v.getContext(),businessList.getBinderDocIDOS(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), TravelList.class);
+                intent.putExtra("str1","Finished");
+                intent.putExtra("str2", businessList.getBinderDocIDOS());
+                v.getContext().startActivity(intent);
 
             }
         });

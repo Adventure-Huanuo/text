@@ -1,5 +1,6 @@
 package com.example.lee.myapplication;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,9 +43,10 @@ public class BusinessListAdapter01 extends RecyclerView.Adapter<BusinessListAdap
                 int position = holder.getAdapterPosition();
                 BusinessList01 businessList01 = mBusinessList01.get(position);
                 //Toast.makeText(v.getContext(),businessList01.getBinderDocIDOS(),Toast.LENGTH_SHORT).show();
-                //Intent intent = new Intent(v.getContext(), PhoneListdetial.class);
-                //intent.putExtra("str", businessList.getBinderDocIDOS());
-                //v.getContext().startActivity(intent);
+                Intent intent = new Intent(v.getContext(), TravelList.class);
+                intent.putExtra("str1","ToDo");
+                intent.putExtra("str2", businessList01.getBinderDocIDOS());
+                v.getContext().startActivity(intent);
 
             }
         });
