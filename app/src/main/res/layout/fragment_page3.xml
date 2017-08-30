@@ -280,7 +280,7 @@
             android:textColor="@color/colorText1"
             android:layout_below="@+id/textView01"
             android:layout_marginTop="12dp"
-            android:id="@+id/textView_02"
+            android:id="@+id/textView02"
             android:textSize="12sp"
             android:layout_alignLeft="@+id/textView01"
             android:layout_weight="1"/>
