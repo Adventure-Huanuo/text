@@ -13,7 +13,6 @@
         <activity android:name=".welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -22,7 +21,13 @@
             android:alwaysRetainTaskState="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+            <intent-filter>
+            　　<action android:name="android.intent.action.VIEW" />
+            　　<category android:name="android.intent.category.DEFAULT" />
+            　　<data android:scheme="http" />       <!--响应所有的http协议的Intent-->
+            </intent-filter>
+        </activity>
         <activity
             android:name=".LoginActivity"
             android:alwaysRetainTaskState="true"
@@ -58,17 +63,10 @@
             android:name=".TravelList"
             android:windowSoftInputMode="adjustPan|stateHidden" />
         <activity android:name=".Personal_Workspace_new" />
-        <activity android:name=".BusinessList" />
-        <activity android:name=".BusinessListAdapter" />
         <activity android:name=".Work_Todo" />
         <activity android:name=".Work_Done" />
         <activity android:name=".PersonalWorkspace" />
         android:windowSoftInputMode="adjustPan|stateHidden" />
-        <activity android:name=".FragmentPage1" />
-        <activity android:name=".BusinessList01" />
-        <activity android:name=".BusinessListAdapter01" />
-        <activity android:name=".BusinessList02" />
-        <activity android:name=".BusinessListAdapter02"></activity>
     </application>
 
 </manifest>

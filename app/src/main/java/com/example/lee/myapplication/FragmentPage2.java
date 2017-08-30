@@ -170,6 +170,11 @@ public class FragmentPage2 extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
     }
@@ -180,10 +185,24 @@ public class FragmentPage2 extends Fragment {
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+    @Override
     public void onDestroy() {
         super.onDestroy();
-
     }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+
 
     private void sendRequestWithHttpURLConnection(final String str) {
         //开启线程来发起网络请求

@@ -269,6 +269,11 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
     }
@@ -279,9 +284,22 @@ public class FragmentPage4 extends Fragment implements View.OnClickListener {
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+    }
+    @Override
     public void onDestroy() {
         super.onDestroy();
+    }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 
     @Override

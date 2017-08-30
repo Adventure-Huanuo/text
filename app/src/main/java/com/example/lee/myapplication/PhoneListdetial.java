@@ -20,29 +20,29 @@ public class PhoneListdetial extends AppCompatActivity {
     final static int MESSAGE_OK = 0;
     final static int MESSAGE_ERR = 1;
     final static int MESSAGE_SHOW_IMG = 0;
-    final static int MESSAGE_RESULT_ERR = 1;
-    Handler handler;
-    Handler handler1;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.me_paper2_layout);
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-        String id = pref.getString("account", "");
-        String token = pref.getString("token", "");
-        final Intent intent = getIntent();
-        String searchText = intent.getStringExtra("str");
-        final TextView tv4 = (TextView) this.findViewById(R.id.textView4);
-        final TextView tv7 = (TextView) this.findViewById(R.id.textView7);
-        final TextView tv9 = (TextView) this.findViewById(R.id.textView9);
-        final TextView tv11 = (TextView) this.findViewById(R.id.textView11);
-        final TextView tv13 = (TextView) this.findViewById(R.id.textView13);
-        final TextView tv15 = (TextView) this.findViewById(R.id.textView15);
-        final TextView tv17 = (TextView) this.findViewById(R.id.textView17);
-        sendRequestWithHttpURLConnection(id,token,searchText);
-        handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
+                final static int MESSAGE_RESULT_ERR = 1;
+                Handler handler;
+                Handler handler1;
+                @Override
+                protected void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    setContentView(R.layout.me_paper2_layout);
+                    SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+                    String id = pref.getString("account", "");
+                    String token = pref.getString("token", "");
+                    final Intent intent = getIntent();
+                    String searchText = intent.getStringExtra("str");
+                    final TextView tv4 = (TextView) this.findViewById(R.id.textView4);
+                    final TextView tv7 = (TextView) this.findViewById(R.id.textView7);
+                    final TextView tv9 = (TextView) this.findViewById(R.id.textView9);
+                    final TextView tv11 = (TextView) this.findViewById(R.id.textView11);
+                    final TextView tv13 = (TextView) this.findViewById(R.id.textView13);
+                    final TextView tv15 = (TextView) this.findViewById(R.id.textView15);
+                    final TextView tv17 = (TextView) this.findViewById(R.id.textView17);
+                    sendRequestWithHttpURLConnection(id,token,searchText);
+                    handler = new Handler() {
+                        @Override
+                        public void handleMessage(Message msg) {
                 // super.handleMessage(msg);
                 switch (msg.what) {
                     case MESSAGE_OK:
