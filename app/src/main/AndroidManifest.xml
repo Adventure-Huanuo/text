@@ -54,6 +54,7 @@
         <activity android:name=".PhoneListdetial" />
         <activity android:name=".MyInformationEdit" />
         <activity android:name=".ApartmentItem1" />
+        <activity android:name=".ApartmentItem2" />
         <activity
             android:name=".travelapply"
             android:windowSoftInputMode="adjustPan|stateHidden" />
