@@ -1,5 +1,6 @@
 package com.example.lee.myapplication;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +33,10 @@ public class LargerDepaAdapter extends RecyclerView.Adapter<LargerDepaAdapter.Vi
             public void onClick(View v) {
                 int position = holder.getAdapterPosition();
                 LargerDepartments largerDepartments = mLargerDepaList.get(position);
-                Toast.makeText(v.getContext(),largerDepartments.getDepart_name(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(v.getContext(),largerDepartments.getDepart_name(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), ApartmentItem1.class);
+                intent.putExtra("str", largerDepartments.getDepart_name());
+                v.getContext().startActivity(intent);
             }
         });
         return holder;

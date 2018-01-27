@@ -20,24 +20,23 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ApartmentItem1 extends AppCompatActivity {
+public class ApartmentItem2 extends AppCompatActivity {
     final static int MESSAGE_OK = 0;
-    Handler handler;
-    private List<SmallDepartments> apartmentList=new ArrayList<>();
+    final static int MESSAGE_ERR = 1;
     private TextView dpt;
-    private RecyclerView mRecyclerView;
+    Handler handler;
+    private List<Apartment1> apartmentList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.small_dpt_act);
+        setContentView(R.layout.apartment_item_activity);
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         String id = pref.getString("account", "");
         String token = pref.getString("token", "");
         final Intent intent = getIntent();
         String depart = intent.getStringExtra("str");
         sendRequestWithHttpURLConnection(id,token,depart);
-        mRecyclerView = (RecyclerView) findViewById(R.id.apart_recyclerview);
-        /*handler = new Handler() {
+        handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
                 // super.handleMessage(msg);
@@ -47,7 +46,7 @@ public class ApartmentItem1 extends AppCompatActivity {
                         try {
                             if(response.length()>15){
                                 JSONObject json = new JSONObject(response);
-                                String rowcount = json.getString("rowcount");
+                                String rowcount = json.getString("rowCount");
                                 int count=0;
                                 try {
                                     count = Integer.parseInt(rowcount);
@@ -55,13 +54,13 @@ public class ApartmentItem1 extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
                                 initApartment(count,json);
-                                RecyclerView recyclerView=(RecyclerView) findViewById(R.id.apart_recyclerview);
-                                LinearLayoutManager layoutManager=new LinearLayoutManager(ApartmentItem1.this);
+                                RecyclerView recyclerView=(RecyclerView) findViewById(R.id.man_recyclerview);
+                                LinearLayoutManager layoutManager=new LinearLayoutManager(ApartmentItem2.this);
                                 recyclerView.setLayoutManager(layoutManager);
-                                SmallDepaAdapter adapter=new SmallDepaAdapter(apartmentList);
+                                ApartmentAdapter3 adapter=new ApartmentAdapter3(apartmentList);
                                 recyclerView.setAdapter(adapter);
                             } else {
-                                Toast.makeText(ApartmentItem1.this, "获取失败", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ApartmentItem2.this, "获取失败", Toast.LENGTH_SHORT).show();
                             }
 
                         } catch (Exception e) {
@@ -69,39 +68,7 @@ public class ApartmentItem1 extends AppCompatActivity {
                         }
                         break;
                     case MESSAGE_ERR:
-                        Toast.makeText(ApartmentItem1.this, "请检查网络", Toast.LENGTH_SHORT).show();
-                        break;
-                    default:
-                        break;
-                }
-            }
-    };*/
-
-        handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                // super.handleMessage(msg);
-                switch (msg.what) {
-                    case MESSAGE_OK:
-                        String response = (String) msg.obj;
-                        try {
-                            JSONObject json = new JSONObject(response);
-                            String rowcount = json.getString("rowCount");
-                            int count=0;
-                            try {
-                                count = Integer.parseInt(rowcount);
-                            } catch (NumberFormatException e) {
-                                e.printStackTrace();
-                            }
-                            initApartment(count,json);
-                            //RecyclerView recyclerView=(RecyclerView) mActivity.findViewById(R.id.recycler_view);
-                            LinearLayoutManager layoutManager=new LinearLayoutManager(ApartmentItem1.this);
-                            mRecyclerView.setLayoutManager(layoutManager);
-                            SmallDepaAdapter adapter = new SmallDepaAdapter(apartmentList);
-                            mRecyclerView.setAdapter(adapter);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+                        Toast.makeText(ApartmentItem2.this, "请检查网络", Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         break;
@@ -112,7 +79,7 @@ public class ApartmentItem1 extends AppCompatActivity {
         dpt.setText(depart);
     }
 
-   /* private void initApartment(int count,JSONObject json) {
+    private void initApartment(int count,JSONObject json) {
         for (int i = 1; i <=count; i++) {
             String name=null;
             try {
@@ -123,21 +90,7 @@ public class ApartmentItem1 extends AppCompatActivity {
             Apartment1 employee = new Apartment1(R.drawable.boy,name);
             apartmentList.add(employee);
         }
-    }*/
-
-    private void initApartment(int count,JSONObject json) {
-        for (int i = 1; i <=count; i++) {
-            String name=null;
-            try {
-                name = json.getString(""+i);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            SmallDepartments smallDepartments = new SmallDepartments(name);
-            apartmentList.add(smallDepartments);
-        }
     }
-
     private void sendRequestWithHttpURLConnection(final String id,final String token,final String searchText) {
         //开启线程来发起网络请求
         new Thread(new Runnable() {
@@ -145,18 +98,19 @@ public class ApartmentItem1 extends AppCompatActivity {
             public void run() {
                 try {
                     Map dataMap = new HashMap();
-                    dataMap.put("department",searchText);
+                    dataMap.put("depart",searchText);
                     dataMap.put("id",id);
                     dataMap.put("token",token);
                     HttpRequestor httpRequestor = new HttpRequestor();
-                    httpRequestor.doPost_2("http://172.16.201.17:8080/HuanuoServer/DepartTest", dataMap,handler);
+                    httpRequestor.doPost_2("http://172.16.201.17:8080/HuanuoServer/addressList", dataMap,handler);
                 } catch (Exception e) {
                     e.getMessage();
                     Looper.prepare();
-                    Toast.makeText(ApartmentItem1.this,"请检查网络设置",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ApartmentItem2.this,"请检查网络设置",Toast.LENGTH_SHORT).show();
                     Looper.loop();
                 }
             }
         }).start();
     }
+
 }
